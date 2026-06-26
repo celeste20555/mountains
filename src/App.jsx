@@ -8,11 +8,12 @@ import HomeProducts from "./componentes/HomeProducts/HomeProducts";
 import ListadeProducts from "./componentes/ListadeProducts/ListadeProducts";
 import Footer from "./componentes/Footer/Footer";
 import Busqueda from "./componentes/Busqueda/Busqueda";
+import Producto from "./componentes/Producto/Producto";
 
 function App() {
-
   const [mostrarBusqueda, setMostrarBusqueda] = useState(false);
   const [mostrarProductos, setMostrarProductos] = useState(false);
+  const [mostrarProducto, setMostrarProducto] = useState(false);
   const [textoBusqueda, setTextoBusqueda] = useState("");
 
   return (
@@ -20,34 +21,43 @@ function App() {
       <Navbar
         setMostrarBusqueda={setMostrarBusqueda}
         setMostrarProductos={setMostrarProductos}
+        setMostrarProducto={setMostrarProducto}
         textoBusqueda={textoBusqueda}
         setTextoBusqueda={setTextoBusqueda}
       />
 
       {mostrarBusqueda ? (
-
-        <Busqueda
-          textoBusqueda={textoBusqueda}
-          setMostrarBusqueda={setMostrarBusqueda}
-        />
-
-      ) : mostrarProductos ? (
-
         <>
-          <ListadeProducts />
+          <Busqueda
+            textoBusqueda={textoBusqueda}
+            setMostrarBusqueda={setMostrarBusqueda}
+          />
           <Footer />
         </>
-
+      ) : mostrarProducto ? (
+        <>
+          <Producto />
+          <Footer />
+        </>
+      ) : mostrarProductos ? (
+        <>
+          <ListadeProducts
+            setMostrarProducto={setMostrarProducto}
+          />
+          <Footer />
+        </>
       ) : (
-
         <>
           <Hero />
+
           <Categories />
-          <HomeProducts />
-          <ListadeProducts />
+
+          <HomeProducts
+            setMostrarProducto={setMostrarProducto}
+          />
+
           <Footer />
         </>
-
       )}
     </>
   );

@@ -1,0 +1,24 @@
+.producto{
+    width:90%;
+    margin:40px auto;
+}
+
+.producto-top{
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    align-items:flex-start;
+}
+
+@media(max-width:768px){
+
+    .producto{
+        width:95%;
+    }
+
+    .producto-top{
+        flex-direction:column;
+        gap:25px;
+    }
+
+}

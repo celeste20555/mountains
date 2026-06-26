@@ -2,7 +2,7 @@ import "./ListadeProducts.css";
 
 import RelatedProducts from "../RelatedProducts/RelatedProducts";
 
-function ListadeProducts() {
+function ListadeProducts({ setMostrarProducto }) {
   return (
     <>
       <div className="ofertas">
@@ -31,7 +31,9 @@ function ListadeProducts() {
         </div>
       </section>
 
-      <RelatedProducts />
+      <RelatedProducts
+        setMostrarProducto={setMostrarProducto}
+      />
     </>
   );
 }

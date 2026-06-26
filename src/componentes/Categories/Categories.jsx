@@ -1,8 +1,6 @@
 import "./Categories.css";
 import CategoryCard from "./CategoryCard";
 
-/* IMÁGENES */
-
 import cocina from "../../imagenes/cocina.png";
 import limpieza from "../../imagenes/limpieza.png";
 import herramientas from "../../imagenes/herramientas.png";

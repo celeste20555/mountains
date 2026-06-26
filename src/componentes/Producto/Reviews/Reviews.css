@@ -1,0 +1,189 @@
+.reviews{
+    margin-top:70px;
+    background:#ECE9DB;
+    border-radius:15px;
+    padding:35px;
+    display:flex;
+    box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+.reviews-left{
+    width:280px;
+    text-align:center;
+    border-right:1px solid #d8cfb4;
+    padding-right:30px;
+}
+
+.comment-icon{
+    width:100px;
+    height:100px;
+    margin:auto;
+    border-radius:50%;
+    background:#dfdbc8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:45px;
+    color:#555;
+}
+
+.reviews-left h2{
+    margin-top:20px;
+    color:#6f7645;
+    font-size:27px;
+    font-family:"Libre Baskerville", serif;
+}
+
+.reviews-left p{
+    color:#98a25d;
+    margin-top:10px;
+}
+
+.rating{
+    margin:25px 0 70px;
+    color:#d8c300;
+    font-size:35px;
+    display:flex;
+    justify-content:center;
+    gap:5px;
+}
+
+.reviews-left button{
+    background:rgba(159,191,86,.29);
+    border:1px solid #555;
+    padding:14px 30px;
+    border-radius:8px;
+    cursor:pointer;
+    color:rgba(99,119,38,1);
+    font-size:18px;
+}
+
+.reviews-right{
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding-left:30px;
+}
+
+.reviews-list{
+    flex:1;
+}
+
+.review-card{
+    padding:20px 0;
+    border-bottom:1px solid #d8cfb4;
+}
+
+.review-card:last-child{
+    border:none;
+}
+
+.review-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.user{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#8f6d54;
+    font-size:18px;
+}
+
+.user svg{
+    font-size:24px;
+}
+
+.review-header small{
+    color:#9fad69;
+}
+
+.stars{
+    color:#d8c300;
+    margin:10px 0;
+    font-size:20px;
+}
+
+.review-card p{
+    color:#333;
+    line-height:25px;
+}
+
+.review-arrow{
+    border:none;
+    background:transparent;
+    font-size:40px;
+    color:#555;
+    cursor:pointer;
+}
+
+.review-arrow:hover{
+    color:#777;
+}
+
+@media(max-width:768px){
+
+    .reviews{
+        flex-direction:column;
+        padding:20px;
+    }
+
+    .reviews-left{
+        width:100%;
+        border-right:none;
+        border-bottom:1px solid #d8cfb4;
+        padding-right:0;
+        padding-bottom:20px;
+        margin-bottom:20px;
+    }
+
+    .comment-icon{
+        width:70px;
+        height:70px;
+        font-size:30px;
+    }
+
+    .reviews-left h2{
+        font-size:20px;
+    }
+
+    .rating{
+        font-size:25px;
+        margin:20px 0;
+    }
+
+    .reviews-left button{
+        font-size:14px;
+        padding:10px 20px;
+    }
+
+    .reviews-right{
+        padding-left:0;
+        gap:10px;
+    }
+
+    .review-card{
+        padding:10px 0;
+    }
+
+    .user{
+        font-size:14px;
+    }
+
+    .stars{
+        font-size:16px;
+    }
+
+    .review-card p{
+        font-size:13px;
+        line-height:18px;
+    }
+
+    .review-arrow{
+        font-size:25px;
+    }
+
+}

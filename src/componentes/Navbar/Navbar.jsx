@@ -13,6 +13,7 @@ import {
 function Navbar({
   setMostrarBusqueda,
   setMostrarProductos,
+  setMostrarProducto,
   textoBusqueda,
   setTextoBusqueda,
 }) {
@@ -22,7 +23,21 @@ function Navbar({
     if (e.key === "Enter") {
       setMostrarBusqueda(true);
       setMostrarProductos(false);
+      setMostrarProducto(false);
     }
+  };
+
+  const volverAlHome = () => {
+    setMostrarBusqueda(false);
+    setMostrarProductos(false);
+    setMostrarProducto(false);
+    setTextoBusqueda("");
+    setMenuAbierto(false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -32,10 +47,7 @@ function Navbar({
           <img
             src={logo}
             alt="Logo"
-            onClick={() => {
-              setMostrarBusqueda(false);
-              setMostrarProductos(false);
-            }}
+            onClick={volverAlHome}
           />
         </div>
 
@@ -69,21 +81,21 @@ function Navbar({
           </div>
 
           <ul>
-            <li
-              onClick={() => {
-                setMostrarBusqueda(false);
-                setMostrarProductos(false);
-                setMenuAbierto(false);
-              }}
-            >
+            <li onClick={volverAlHome}>
               Inicio
             </li>
 
             <li
               onClick={() => {
                 setMostrarBusqueda(false);
+                setMostrarProducto(false);
                 setMostrarProductos(true);
                 setMenuAbierto(false);
+
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
               }}
             >
               Productos
@@ -91,9 +103,7 @@ function Navbar({
 
             <li
               onClick={() => {
-                setMostrarBusqueda(false);
-                setMostrarProductos(false);
-                setMenuAbierto(false);
+                volverAlHome();
 
                 setTimeout(() => {
                   const footer = document.getElementById("contacto");

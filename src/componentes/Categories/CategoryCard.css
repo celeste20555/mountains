@@ -8,7 +8,6 @@
     position:relative;
     overflow:hidden;
 
-    /* ESQUINAS */
     border-top-left-radius:0;
     border-top-right-radius:20px;
     border-bottom-right-radius:0;

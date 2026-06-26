@@ -32,7 +32,6 @@ const categorias = [
       { imagen: Silla_desplegable, nombre: "Silla desplegable", precio: "$27.000" },
     ],
   },
-
   {
     clase: "related2",
     subtitulo: "subtitulos2",
@@ -45,7 +44,6 @@ const categorias = [
       { imagen: Termico, nombre: "Pantalón térmico", precio: "$20.000" },
     ],
   },
-
   {
     clase: "related3",
     subtitulo: "subtitulos3",
@@ -58,7 +56,6 @@ const categorias = [
       { imagen: Radio, nombre: "Radio", precio: "$32.000" },
     ],
   },
-
   {
     clase: "related4",
     subtitulo: "subtitulos4",
@@ -71,7 +68,6 @@ const categorias = [
       { imagen: Radio, nombre: "Radio", precio: "$32.000" },
     ],
   },
-
   {
     clase: "related5",
     subtitulo: "subtitulos5",
@@ -84,7 +80,6 @@ const categorias = [
       { imagen: Termico, nombre: "Pantalón", precio: "$20.000" },
     ],
   },
-
   {
     clase: "related6",
     subtitulo: "subtitulos6",
@@ -97,7 +92,6 @@ const categorias = [
       { imagen: Radio, nombre: "Radio", precio: "$32.000" },
     ],
   },
-
   {
     clase: "related7",
     subtitulo: "subtitulos7",
@@ -110,7 +104,6 @@ const categorias = [
       { imagen: Radio, nombre: "Radio", precio: "$32.000" },
     ],
   },
-
   {
     clase: "related8",
     subtitulo: "subtitulos8",
@@ -123,7 +116,6 @@ const categorias = [
       { imagen: Radio, nombre: "Radio", precio: "$32.000" },
     ],
   },
-
   {
     clase: "related9",
     subtitulo: "subtitulos9",
@@ -136,7 +128,6 @@ const categorias = [
       { imagen: Radio, nombre: "Radio", precio: "$32.000" },
     ],
   },
-
   {
     clase: "related10",
     subtitulo: "subtitulos10",
@@ -151,7 +142,7 @@ const categorias = [
   },
 ];
 
-function RelatedProducts() {
+function RelatedProducts({ setMostrarProducto }) {
   return (
     <>
       {categorias.map((categoria, index) => (
@@ -169,6 +160,7 @@ function RelatedProducts() {
                   imagen={producto.imagen}
                   nombre={producto.nombre}
                   precio={producto.precio}
+                  setMostrarProducto={setMostrarProducto}
                 />
               ))}
             </div>

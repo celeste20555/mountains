@@ -5,7 +5,7 @@ import producto1 from "../../imagenes/Campera.png";
 import producto2 from "../../imagenes/Gorra.png";
 import producto3 from "../../imagenes/Bolsegos.png";
 
-function HomeProducts() {
+function HomeProducts({ setMostrarProducto }) {
   return (
     <section className="home-products-section">
 
@@ -22,23 +22,28 @@ function HomeProducts() {
         </button>
 
         <div className="productos-contenedor">
+
           <ProductCard
             imagen={producto1}
             nombre="Campera térmica"
             precio="$35.000"
+            setMostrarProducto={setMostrarProducto}
           />
 
           <ProductCard
             imagen={producto2}
             nombre="Gorro térmico"
             precio="$10.000"
+            setMostrarProducto={setMostrarProducto}
           />
 
           <ProductCard
             imagen={producto3}
             nombre="Bolsegos"
             precio="$33.000"
+            setMostrarProducto={setMostrarProducto}
           />
+
         </div>
 
         <button className="flecha derecha">
