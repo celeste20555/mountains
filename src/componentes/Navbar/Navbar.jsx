@@ -9,7 +9,6 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
-
 function Navbar({
   setMostrarBusqueda,
   setMostrarProductos,
@@ -26,7 +25,6 @@ function Navbar({
       setMostrarProducto(false);
     }
   };
-
   const volverAlHome = () => {
     setMostrarBusqueda(false);
     setMostrarProductos(false);
@@ -39,7 +37,6 @@ function Navbar({
       behavior: "smooth",
     });
   };
-
   return (
     <>
       <header className="navbar">
@@ -64,7 +61,14 @@ function Navbar({
         </div>
 
         <div className="navbar-icons">
-          <FiShoppingCart />
+          <FiShoppingCart
+            onClick={() =>
+              alert(
+                "El carrito por el momento no está disponible.\n\nContactanos por WhatsApp para realizar tu compra(era la parte de maria)."
+              )
+            }
+          />
+
           <FiUser />
 
           <FiMenu

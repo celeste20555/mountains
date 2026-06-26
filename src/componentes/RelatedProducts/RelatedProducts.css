@@ -45,8 +45,6 @@
     font-size: 18px;
 }
 
-/* ================= RELATED 2 ================= */
-
 .related2{
     margin-bottom: 80px;
 }
@@ -81,8 +79,6 @@
     margin-top: -30px;
     font-size: 18px;
 }
-
-/* ================= RELATED 3 ================= */
 
 .related3{
     margin-bottom: 80px;
@@ -119,8 +115,6 @@
     font-size: 18px;
 }
 
-/* ================= RELATED 4 ================= */
-
 .related4{
     margin-bottom: 80px;
 }
@@ -155,7 +149,6 @@
     margin-top: -30px;
     font-size: 18px;
 }
-/* ================= RELATED 5 ================= */
 
 .related5{
     margin-bottom:80px;
@@ -192,8 +185,6 @@
     font-size:18px;
 }
 
-/* ================= RELATED 6 ================= */
-
 .related6{
     margin-bottom:80px;
 }
@@ -228,8 +219,6 @@
     margin-top:-30px;
     font-size:18px;
 }
-
-/* ================= RELATED 7 ================= */
 
 .related7{
     margin-bottom:80px;
@@ -266,8 +255,6 @@
     font-size:18px;
 }
 
-/* ================= RELATED 8 ================= */
-
 .related8{
     margin-bottom:80px;
 }
@@ -303,8 +290,6 @@
     font-size:18px;
 }
 
-/* ================= RELATED 9 ================= */
-
 .related9{
     margin-bottom:80px;
 }
@@ -339,8 +324,6 @@
     margin-top:-30px;
     font-size:18px;
 }
-
-/* ================= RELATED 10 ================= */
 
 .related10{
     margin-bottom:80px;
@@ -405,8 +388,6 @@
     color:#8f9f5c;
 }
 
-/* ================= NOTEBOOK ================= */
-
 @media (max-width:1200px){
 
     .related-grid{
@@ -415,8 +396,6 @@
     }
 
 }
-
-/* ================= TABLET ================= */
 
 @media (max-width:900px){
 
@@ -452,8 +431,6 @@
     }
 
 }
-
-/* ================= CELULAR ================= */
 
 @media (max-width:600px){
 
@@ -491,8 +468,6 @@
 
 }
 
-/* ================= CELULARES MUY CHICOS ================= */
-
 @media (max-width:420px){
 
     .related-grid{
@@ -500,7 +475,6 @@
     }
 
 }
-/* ================= ESPACIADO ================= */
 
 .related,
 .related2,
@@ -528,8 +502,6 @@
     margin-bottom:40px;
 }
 
-/* ================= SUBTÍTULOS ================= */
-
 .subtitulos,
 .subtitulos2,
 .subtitulos3,
@@ -542,8 +514,6 @@
 .subtitulos10{
     margin-bottom:20px;
 }
-
-/* ================= ANIMACIÓN ================= */
 
 .product-card{
     transition:transform .3s ease, box-shadow .3s ease;
