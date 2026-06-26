@@ -1,53 +1,27 @@
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
-function App(){
-  return(
-    
+import Navbar from "./components/Navbar/Navbar";
+import ListadeProducts from "./components/ListadeProducts/ListadeProducts";
+import Busqueda from "./components/Busqueda/Busqueda";
+import Footer from "./components/Footer/Footer";
+
+function App() {
+  const [mostrarBusqueda, setMostrarBusqueda] = useState(false);
+
+  return (
     <>
-  <nav>
-    <img src="" alt="logo" className="logo" />
+      <Navbar setMostrarBusqueda={setMostrarBusqueda} />
 
-    <input
-      type="text"
-      placeholder="Buscar productos..."
-    />
+      {mostrarBusqueda ? (
+        <Busqueda setMostrarBusqueda={setMostrarBusqueda} />
+      ) : (
+        <ListadeProducts />
+      )}
 
-    <div className="iconos">
-      <img src="" alt="carrito" />
-      <img src="" alt="usuario" />
-      <img src="" alt="menu" />
-    </div>
-  </nav>
-
-  <div className="ofertas">
-    <h2>🏷️ Nuestros productos imperdibles al 50% OFF</h2>
-  </div>
-
-  <section className="filtros">
-
-    <button className="categoria">
-      TODAS LAS CATEGORÍAS
-    </button>
-
-    <div className="derecha">
-
-      <select>
-        <option>MAS VENDIDOS</option>
-      </select>
-
-      <select>
-        <option>Todas las categorías</option>
-      </select>
-
-      <select>
-        <option>Filtrar</option>
-      </select>
-
-    </div>
-
-  </section>
-</>
-    
-  )
+      <Footer />
+    </>
+  );
 }
-export default App
+
+export default App;

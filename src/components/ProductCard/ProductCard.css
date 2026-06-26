@@ -1,0 +1,136 @@
+.product-card{
+    width:220px;
+    background:#ffffff;
+    overflow:hidden;
+    border-top-right-radius:35px;
+    border-bottom-left-radius:35px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+.product-card:hover{
+    transform:translateY(-5px);
+}
+.product-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+    border-top-right-radius:35px;
+    filter: brightness(80%);
+}
+.product-card h3{
+    margin:18px 18px 8px;
+    font-size:20px;
+    font-family:"Libre Baskerville", serif;
+    color:#1f1f1f;
+    text-align:left;
+}
+.product-card p{
+    margin:0 18px 18px;
+    color:#C49A35;
+    font-size:18px;
+    text-align:left;
+}
+.product-card button{
+    width:85%;
+    margin:0 auto 18px;
+    display:block;
+    background:#98A85F;
+    color:white;
+    border:none;
+    border-radius:8px;
+    padding:12px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+.product-card button:hover{
+    background:#839251;
+}
+
+/* noteok*/
+
+@media screen and (max-width:1200px){
+
+    .product-card{
+        width:200px;
+    }
+
+    .product-card img{
+        height:170px;
+    }
+
+}
+
+/* table */
+
+@media screen and (max-width:900px){
+
+    .product-card{
+        width:170px;
+    }
+
+    .product-card img{
+        height:140px;
+    }
+
+    .product-card h3{
+        margin:12px 12px 6px;
+        font-size:16px;
+    }
+
+    .product-card p{
+        margin:0 12px 12px;
+        font-size:16px;
+    }
+
+    .product-card button{
+        width:85%;
+        padding:8px;
+        font-size:12px;
+    }
+
+}
+
+/* phono */
+
+@media screen and (max-width:480px){
+
+    .product-card{
+        width:145px;
+    }
+
+    .product-card img{
+        height:115px;
+    }
+
+    .product-card h3{
+        margin:8px;
+        font-size:13px;
+        line-height:16px;
+    }
+
+    .product-card p{
+        margin:0 8px 8px;
+        font-size:14px;
+    }
+
+    .product-card button{
+        width:88%;
+        padding:6px;
+        font-size:10px;
+        border-radius:6px;
+    }
+
+}
+
+/* phono petite */
+
+@media screen and (max-width:320px){
+
+    .product-card{
+        width:90%;
+    }
+
+}
