@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#F5F2E8;
+    font-family:'Cormorant Garamond', serif;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}

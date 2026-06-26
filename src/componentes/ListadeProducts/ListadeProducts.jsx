@@ -6,7 +6,6 @@ function ListadeProducts() {
   return (
     <>
       <div className="ofertas">
-        <span class="material-symbols-outlined">sell</span>
         <h2>Nuestros productos imperdibles al</h2>
         <h3>50% OFF</h3>
       </div>

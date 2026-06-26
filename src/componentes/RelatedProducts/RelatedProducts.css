@@ -1,0 +1,555 @@
+.related{
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.related::before{
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #d5cfb8;
+}
+
+.related h2{
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    color: rgba(108,124,53,.78);
+    margin-bottom: 50px;
+}
+
+.related h2::after{
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: -10px;
+    width: 220px;
+    height: 2px;
+    background: rgba(108,124,53,.78);
+}
+
+.subtitulos{
+    position: relative;
+    left: 30px;
+    top: -10px;
+}
+
+.related > .subtitulos h3{
+    margin-top: -30px;
+    text-align: left;
+    font-size: 18px;
+}
+
+/* ================= RELATED 2 ================= */
+
+.related2{
+    margin-bottom: 80px;
+}
+
+.related2 h2{
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    color: rgba(184,143,37,1);
+    margin-bottom: 50px;
+}
+
+.related2 h2::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -10px;
+    width: 160px;
+    height: 2px;
+    background: rgba(184,143,37,1);
+}
+
+.subtitulos2{
+    position: relative;
+    left: 30px;
+    top: -10px;
+}
+
+.related2 > .subtitulos2 h3{
+    margin-top: -30px;
+    font-size: 18px;
+}
+
+/* ================= RELATED 3 ================= */
+
+.related3{
+    margin-bottom: 80px;
+}
+
+.related3 h2{
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    color: rgba(120,76,32,1);
+    margin-bottom: 50px;
+}
+
+.related3 h2::after{
+    content: "";
+    position: absolute;
+    left: 13px;
+    bottom: -10px;
+    width: 200px;
+    height: 2px;
+    background: rgba(120,76,32,1);
+}
+
+.subtitulos3{
+    position: relative;
+    left: 30px;
+    top: -10px;
+}
+
+.related3 > .subtitulos3 h3{
+    margin-top: -30px;
+    font-size: 18px;
+}
+
+/* ================= RELATED 4 ================= */
+
+.related4{
+    margin-bottom: 80px;
+}
+
+.related4 h2{
+    position: relative;
+    display: inline-block;
+    font-size: 25px;
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    color: rgba(108,124,53,.78);
+    margin-bottom: 50px;
+}
+
+.related4 h2::after{
+    content: "";
+    position: absolute;
+    left: 25px;
+    bottom: -10px;
+    width: 145px;
+    height: 2px;
+    background: rgba(108,124,53,.78);
+}
+
+.subtitulos4{
+    position: relative;
+    left: 30px;
+    top: -10px;
+}
+
+.related4 > .subtitulos4 h3{
+    margin-top: -30px;
+    font-size: 18px;
+}
+/* ================= RELATED 5 ================= */
+
+.related5{
+    margin-bottom:80px;
+}
+
+.related5 h2{
+    position:relative;
+    display:inline-block;
+    font-size:25px;
+    font-family:"Libre Baskerville", serif;
+    font-style:italic;
+    color:rgba(184,143,37,1);
+    margin-bottom:50px;
+}
+
+.related5 h2::after{
+    content:"";
+    position:absolute;
+    left:25px;
+    bottom:-10px;
+    width:160px;
+    height:2px;
+    background:rgba(184,143,37,1);
+}
+
+.subtitulos5{
+    position:relative;
+    left:30px;
+    top:-10px;
+}
+
+.related5 > .subtitulos5 h3{
+    margin-top:-30px;
+    font-size:18px;
+}
+
+/* ================= RELATED 6 ================= */
+
+.related6{
+    margin-bottom:80px;
+}
+
+.related6 h2{
+    position:relative;
+    display:inline-block;
+    font-size:25px;
+    font-family:"Libre Baskerville", serif;
+    font-style:italic;
+    color:rgba(120,76,32,1);
+    margin-bottom:50px;
+}
+
+.related6 h2::after{
+    content:"";
+    position:absolute;
+    left:25px;
+    bottom:-10px;
+    width:200px;
+    height:2px;
+    background:rgba(120,76,32,1);
+}
+
+.subtitulos6{
+    position:relative;
+    left:30px;
+    top:-10px;
+}
+
+.related6 > .subtitulos6 h3{
+    margin-top:-30px;
+    font-size:18px;
+}
+
+/* ================= RELATED 7 ================= */
+
+.related7{
+    margin-bottom:80px;
+}
+
+.related7 h2{
+    position:relative;
+    display:inline-block;
+    font-size:25px;
+    font-family:"Libre Baskerville", serif;
+    font-style:italic;
+    color:rgba(108,124,53,.78);
+    margin-bottom:50px;
+}
+
+.related7 h2::after{
+    content:"";
+    position:absolute;
+    left:25px;
+    bottom:-10px;
+    width:160px;
+    height:2px;
+    background:rgba(108,124,53,.78);
+}
+
+.subtitulos7{
+    position:relative;
+    left:30px;
+    top:-10px;
+}
+
+.related7 > .subtitulos7 h3{
+    margin-top:-30px;
+    font-size:18px;
+}
+
+/* ================= RELATED 8 ================= */
+
+.related8{
+    margin-bottom:80px;
+}
+
+.related8 h2{
+    position:relative;
+    display:inline-block;
+    font-size:25px;
+    font-family:"Libre Baskerville", serif;
+    font-style:italic;
+    color:rgba(184,143,37,1);
+    margin-bottom:50px;
+}
+
+.related8 h2::after{
+    content:"";
+    position:absolute;
+    left:23px;
+    bottom:-10px;
+    width:215px;
+    height:2px;
+    background:rgba(184,143,37,1);
+}
+
+.subtitulos8{
+    position:relative;
+    left:30px;
+    top:-10px;
+}
+
+.related8 > .subtitulos8 h3{
+    margin-top:-30px;
+    font-size:18px;
+}
+
+/* ================= RELATED 9 ================= */
+
+.related9{
+    margin-bottom:80px;
+}
+
+.related9 h2{
+    position:relative;
+    display:inline-block;
+    font-size:25px;
+    font-family:"Libre Baskerville", serif;
+    font-style:italic;
+    color:rgba(184,143,37,1);
+    margin-bottom:50px;
+}
+
+.related9 h2::after{
+    content:"";
+    position:absolute;
+    left:30px;
+    bottom:-10px;
+    width:220px;
+    height:2px;
+    background:rgba(184,143,37,1);
+}
+
+.subtitulos9{
+    position:relative;
+    left:30px;
+    top:-10px;
+}
+
+.related9 > .subtitulos9 h3{
+    margin-top:-30px;
+    font-size:18px;
+}
+
+/* ================= RELATED 10 ================= */
+
+.related10{
+    margin-bottom:80px;
+}
+
+.related10 h2{
+    position:relative;
+    display:inline-block;
+    font-size:25px;
+    font-family:"Libre Baskerville", serif;
+    font-style:italic;
+    color:rgba(108,124,53,.78);
+    margin-bottom:50px;
+}
+
+.related10 h2::after{
+    content:"";
+    position:absolute;
+    left:35px;
+    bottom:-10px;
+    width:190px;
+    height:2px;
+    background:rgba(108,124,53,.78);
+}
+
+.subtitulos10{
+    position:relative;
+    left:30px;
+    top:-10px;
+}
+
+.related10 > .subtitulos10 h3{
+    margin-top:-30px;
+    font-size:18px;
+}
+.related-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    justify-items:center;
+    width:100%;
+    margin:30px 0 60px;
+}
+
+.related-container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.arrow{
+    border:none;
+    background:transparent;
+    font-size:35px;
+    color:#555;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.arrow:hover{
+    color:#8f9f5c;
+}
+
+/* ================= NOTEBOOK ================= */
+
+@media (max-width:1200px){
+
+    .related-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:25px;
+    }
+
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width:900px){
+
+    .related-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .subtitulos,
+    .subtitulos2,
+    .subtitulos3,
+    .subtitulos4,
+    .subtitulos5,
+    .subtitulos6,
+    .subtitulos7,
+    .subtitulos8,
+    .subtitulos9,
+    .subtitulos10{
+        left:15px;
+    }
+
+    .related h2,
+    .related2 h2,
+    .related3 h2,
+    .related4 h2,
+    .related5 h2,
+    .related6 h2,
+    .related7 h2,
+    .related8 h2,
+    .related9 h2,
+    .related10 h2{
+        font-size:22px;
+    }
+
+}
+
+/* ================= CELULAR ================= */
+
+@media (max-width:600px){
+
+    .related-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .subtitulos,
+    .subtitulos2,
+    .subtitulos3,
+    .subtitulos4,
+    .subtitulos5,
+    .subtitulos6,
+    .subtitulos7,
+    .subtitulos8,
+    .subtitulos9,
+    .subtitulos10{
+        left:10px;
+        top:0;
+    }
+
+    .related h2,
+    .related2 h2,
+    .related3 h2,
+    .related4 h2,
+    .related5 h2,
+    .related6 h2,
+    .related7 h2,
+    .related8 h2,
+    .related9 h2,
+    .related10 h2{
+        font-size:18px;
+    }
+
+}
+
+/* ================= CELULARES MUY CHICOS ================= */
+
+@media (max-width:420px){
+
+    .related-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+/* ================= ESPACIADO ================= */
+
+.related,
+.related2,
+.related3,
+.related4,
+.related5,
+.related6,
+.related7,
+.related8,
+.related9,
+.related10{
+    padding:20px 40px;
+}
+
+.related:last-child,
+.related2:last-child,
+.related3:last-child,
+.related4:last-child,
+.related5:last-child,
+.related6:last-child,
+.related7:last-child,
+.related8:last-child,
+.related9:last-child,
+.related10:last-child{
+    margin-bottom:40px;
+}
+
+/* ================= SUBTÍTULOS ================= */
+
+.subtitulos,
+.subtitulos2,
+.subtitulos3,
+.subtitulos4,
+.subtitulos5,
+.subtitulos6,
+.subtitulos7,
+.subtitulos8,
+.subtitulos9,
+.subtitulos10{
+    margin-bottom:20px;
+}
+
+/* ================= ANIMACIÓN ================= */
+
+.product-card{
+    transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}

@@ -7,21 +7,54 @@ import Bolsa from "../../imagenes/Bolsa_dedormir.png";
 import Gorra from "../../imagenes/Gorra.png";
 import Montanias from "../../imagenes/Montanias.png";
 
-function Busqueda({setMostrarBusqueda}) {
+function Busqueda({ textoBusqueda, setMostrarBusqueda }) {
+
+  const productos = [
+    {
+      imagen: Carpa,
+      nombre: "Carpa explorer 2p",
+      precio: "$30.000",
+    },
+    {
+      imagen: Gorra,
+      nombre: "Gorra de campo",
+      precio: "$5.000",
+    },
+    {
+      imagen: Bolsa,
+      nombre: "Bolsa de dormir",
+      precio: "$25.000",
+    },
+  ];
+
+  const resultados = productos.filter((producto) =>
+    producto.nombre.toLowerCase().includes(textoBusqueda.toLowerCase())
+  );
+
   return (
     <main className="busqueda">
 
       <div className="ruta">
-        <span className="inicio" onClick={()=> setMostrarBusqueda(false)}>Inicio</span>
+        <span
+          className="inicio"
+          onClick={() => setMostrarBusqueda(false)}
+        >
+          Inicio
+        </span>
+
         <span className="flecha">{">"}</span>
+
         <span>Buscar</span>
       </div>
-      
 
       <div className="encabezado-busqueda">
+
         <div>
-          <h1>Resultado para : "carpa"</h1>
-          <p>Se encontraron 2 productos</p>
+          <h1>Resultado para: "{textoBusqueda}"</h1>
+
+          <p>
+            Se encontraron {resultados.length} productos
+          </p>
         </div>
 
         <img
@@ -29,8 +62,8 @@ function Busqueda({setMostrarBusqueda}) {
           alt="logo"
           className="logo-busqueda"
         />
+
       </div>
-      
 
       <div className="contenido-busqueda">
 
@@ -39,6 +72,7 @@ function Busqueda({setMostrarBusqueda}) {
           <h3>FILTRAR RESULTADOS</h3>
 
           <div className="grupo">
+
             <h4>Categoría</h4>
 
             <label>
@@ -48,51 +82,19 @@ function Busqueda({setMostrarBusqueda}) {
 
             <label>
               <input type="checkbox" />
-              Equipamiento para dormir (2)
+              Equipamiento para dormir
             </label>
 
             <label>
               <input type="checkbox" />
-              Ropa y protección (0)
+              Ropa y protección
             </label>
 
             <label>
               <input type="checkbox" />
-              Iluminación y energía (0)
-            </label>
-          </div>
-
-          <div className="grupo">
-            <h4>Precio</h4>
-
-            <label>
-              <input type="radio" name="precio" />
-              Todos los precios
+              Iluminación y energía
             </label>
 
-            <label>
-              <input type="radio" name="precio" />
-              Hasta $20.000
-            </label>
-
-            <label>
-              <input type="radio" name="precio" />
-              $20.000 a $40.000
-            </label>
-
-            <label>
-              <input type="radio" name="precio" />
-              Más de $40.000
-            </label>
-          </div>
-
-          <div className="grupo">
-            <h4>Disponibilidad</h4>
-
-            <label>
-              <input type="checkbox" />
-              Solo productos en stock
-            </label>
           </div>
 
           <button className="limpiar">
@@ -106,7 +108,7 @@ function Busqueda({setMostrarBusqueda}) {
           <div className="barra-filtros">
 
             <select>
-              <option>Mas vendidios</option>
+              <option>Más vendidos</option>
             </select>
 
             <select>
@@ -117,23 +119,22 @@ function Busqueda({setMostrarBusqueda}) {
 
           <div className="cards-busqueda">
 
-            <ProductCard
-              imagen={Carpa}
-              nombre="Carpa explorer 2p"
-              precio="$30.000"
-            />
+            {resultados.length > 0 ? (
 
-            <ProductCard
-              imagen={Gorra}
-              nombre="Gorra de campo"
-              precio="$5.000"
-            />
+              resultados.map((producto, index) => (
+                <ProductCard
+                  key={index}
+                  imagen={producto.imagen}
+                  nombre={producto.nombre}
+                  precio={producto.precio}
+                />
+              ))
 
-            <ProductCard
-              imagen={Bolsa}
-              nombre="Bolsa de dormir"
-              precio="$25.000"
-            />
+            ) : (
+
+              <h2>No se encontraron productos.</h2>
+
+            )}
 
           </div>
 
