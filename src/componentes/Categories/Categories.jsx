@@ -26,7 +26,17 @@ function Categories() {
   return (
     <section className="categories">
 
-      <h2>- Categorías -</h2>
+     <div className="categories-title">
+      <span className="material-symbols-outlined camping-icon">
+          camping
+      </span>
+
+        <h2>- Categorías -</h2>
+
+        <span className="material-symbols-outlined camping-icon camping-right">
+          camping
+        </span>
+      </div>
 
       <h3>DESTACADOS</h3>
 

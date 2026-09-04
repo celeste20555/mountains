@@ -1,525 +1,237 @@
-.related{
-    position: relative;
-    margin-bottom: 80px;
-}
+.producto-related {
+    width: 90%;
 
-.related::before{
-    content: "";
-    position: absolute;
-    top: -30px;
-    left: 0;
+    margin: 80px auto;
+
+    padding-top: 40px;
+
+    border-top: 1px solid #d5cfb8;
+
+    box-sizing: border-box;
+}
+.producto-related h2 {
     width: 100%;
-    height: 1px;
-    background: #d5cfb8;
-}
 
-.related h2{
-    position: relative;
-    display: inline-block;
-    font-size: 25px;
+    text-align: center;
+
+    font-size: 38px;
+
     font-family: "Libre Baskerville", serif;
+
     font-style: italic;
-    color: rgba(108,124,53,.78);
-    margin-bottom: 50px;
-}
 
-.related h2::after{
-    content: "";
-    position: absolute;
-    left: 20px;
-    bottom: -10px;
-    width: 220px;
-    height: 2px;
-    background: rgba(108,124,53,.78);
-}
+    color: #1f1f1f;
 
-.subtitulos{
-    position: relative;
-    left: 30px;
-    top: -10px;
-}
+    margin: 0 0 50px;
 
-.related > .subtitulos h3{
-    margin-top: -30px;
-    text-align: left;
-    font-size: 18px;
-}
+    padding: 0;
 
-.related2{
-    margin-bottom: 80px;
+    box-sizing: border-box;
 }
+.producto-related-container {
+    width: 100%;
 
-.related2 h2{
-    position: relative;
-    display: inline-block;
-    font-size: 25px;
-    font-family: "Libre Baskerville", serif;
-    font-style: italic;
-    color: rgba(184,143,37,1);
-    margin-bottom: 50px;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    box-sizing: border-box;
 }
+.producto-related-grid {
+    display: flex;
 
-.related2 h2::after{
-    content: "";
-    position: absolute;
-    left: 10px;
-    bottom: -10px;
-    width: 160px;
-    height: 2px;
-    background: rgba(184,143,37,1);
+    flex-direction: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 50px;
+
+    box-sizing: border-box;
 }
+.producto-arrow {
+    width: 35px;
+    height: 45px;
 
-.subtitulos2{
-    position: relative;
-    left: 30px;
-    top: -10px;
+    border: none;
+
+    background: transparent;
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    color: #555;
+
+    cursor: pointer;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    transition: color 0.3s ease;
 }
-
-.related2 > .subtitulos2 h3{
-    margin-top: -30px;
-    font-size: 18px;
+.producto-arrow:hover {
+    color: #8f9f5c;
 }
+@media (max-width: 900px) {
 
-.related3{
-    margin-bottom: 80px;
-}
+    .producto-related {
+        width: 90%;
 
-.related3 h2{
-    position: relative;
-    display: inline-block;
-    font-size: 25px;
-    font-family: "Libre Baskerville", serif;
-    font-style: italic;
-    color: rgba(120,76,32,1);
-    margin-bottom: 50px;
-}
+        margin: 60px auto;
 
-.related3 h2::after{
-    content: "";
-    position: absolute;
-    left: 13px;
-    bottom: -10px;
-    width: 200px;
-    height: 2px;
-    background: rgba(120,76,32,1);
-}
-
-.subtitulos3{
-    position: relative;
-    left: 30px;
-    top: -10px;
-}
-
-.related3 > .subtitulos3 h3{
-    margin-top: -30px;
-    font-size: 18px;
-}
-
-.related4{
-    margin-bottom: 80px;
-}
-
-.related4 h2{
-    position: relative;
-    display: inline-block;
-    font-size: 25px;
-    font-family: "Libre Baskerville", serif;
-    font-style: italic;
-    color: rgba(108,124,53,.78);
-    margin-bottom: 50px;
-}
-
-.related4 h2::after{
-    content: "";
-    position: absolute;
-    left: 25px;
-    bottom: -10px;
-    width: 145px;
-    height: 2px;
-    background: rgba(108,124,53,.78);
-}
-
-.subtitulos4{
-    position: relative;
-    left: 30px;
-    top: -10px;
-}
-
-.related4 > .subtitulos4 h3{
-    margin-top: -30px;
-    font-size: 18px;
-}
-
-.related5{
-    margin-bottom:80px;
-}
-
-.related5 h2{
-    position:relative;
-    display:inline-block;
-    font-size:25px;
-    font-family:"Libre Baskerville", serif;
-    font-style:italic;
-    color:rgba(184,143,37,1);
-    margin-bottom:50px;
-}
-
-.related5 h2::after{
-    content:"";
-    position:absolute;
-    left:25px;
-    bottom:-10px;
-    width:160px;
-    height:2px;
-    background:rgba(184,143,37,1);
-}
-
-.subtitulos5{
-    position:relative;
-    left:30px;
-    top:-10px;
-}
-
-.related5 > .subtitulos5 h3{
-    margin-top:-30px;
-    font-size:18px;
-}
-
-.related6{
-    margin-bottom:80px;
-}
-
-.related6 h2{
-    position:relative;
-    display:inline-block;
-    font-size:25px;
-    font-family:"Libre Baskerville", serif;
-    font-style:italic;
-    color:rgba(120,76,32,1);
-    margin-bottom:50px;
-}
-
-.related6 h2::after{
-    content:"";
-    position:absolute;
-    left:25px;
-    bottom:-10px;
-    width:200px;
-    height:2px;
-    background:rgba(120,76,32,1);
-}
-
-.subtitulos6{
-    position:relative;
-    left:30px;
-    top:-10px;
-}
-
-.related6 > .subtitulos6 h3{
-    margin-top:-30px;
-    font-size:18px;
-}
-
-.related7{
-    margin-bottom:80px;
-}
-
-.related7 h2{
-    position:relative;
-    display:inline-block;
-    font-size:25px;
-    font-family:"Libre Baskerville", serif;
-    font-style:italic;
-    color:rgba(108,124,53,.78);
-    margin-bottom:50px;
-}
-
-.related7 h2::after{
-    content:"";
-    position:absolute;
-    left:25px;
-    bottom:-10px;
-    width:160px;
-    height:2px;
-    background:rgba(108,124,53,.78);
-}
-
-.subtitulos7{
-    position:relative;
-    left:30px;
-    top:-10px;
-}
-
-.related7 > .subtitulos7 h3{
-    margin-top:-30px;
-    font-size:18px;
-}
-
-.related8{
-    margin-bottom:80px;
-}
-
-.related8 h2{
-    position:relative;
-    display:inline-block;
-    font-size:25px;
-    font-family:"Libre Baskerville", serif;
-    font-style:italic;
-    color:rgba(184,143,37,1);
-    margin-bottom:50px;
-}
-
-.related8 h2::after{
-    content:"";
-    position:absolute;
-    left:23px;
-    bottom:-10px;
-    width:215px;
-    height:2px;
-    background:rgba(184,143,37,1);
-}
-
-.subtitulos8{
-    position:relative;
-    left:30px;
-    top:-10px;
-}
-
-.related8 > .subtitulos8 h3{
-    margin-top:-30px;
-    font-size:18px;
-}
-
-.related9{
-    margin-bottom:80px;
-}
-
-.related9 h2{
-    position:relative;
-    display:inline-block;
-    font-size:25px;
-    font-family:"Libre Baskerville", serif;
-    font-style:italic;
-    color:rgba(184,143,37,1);
-    margin-bottom:50px;
-}
-
-.related9 h2::after{
-    content:"";
-    position:absolute;
-    left:30px;
-    bottom:-10px;
-    width:220px;
-    height:2px;
-    background:rgba(184,143,37,1);
-}
-
-.subtitulos9{
-    position:relative;
-    left:30px;
-    top:-10px;
-}
-
-.related9 > .subtitulos9 h3{
-    margin-top:-30px;
-    font-size:18px;
-}
-
-.related10{
-    margin-bottom:80px;
-}
-
-.related10 h2{
-    position:relative;
-    display:inline-block;
-    font-size:25px;
-    font-family:"Libre Baskerville", serif;
-    font-style:italic;
-    color:rgba(108,124,53,.78);
-    margin-bottom:50px;
-}
-
-.related10 h2::after{
-    content:"";
-    position:absolute;
-    left:35px;
-    bottom:-10px;
-    width:190px;
-    height:2px;
-    background:rgba(108,124,53,.78);
-}
-
-.subtitulos10{
-    position:relative;
-    left:30px;
-    top:-10px;
-}
-
-.related10 > .subtitulos10 h3{
-    margin-top:-30px;
-    font-size:18px;
-}
-.related-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-    justify-items:center;
-    width:100%;
-    margin:30px 0 60px;
-}
-
-.related-container{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.arrow{
-    border:none;
-    background:transparent;
-    font-size:35px;
-    color:#555;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.arrow:hover{
-    color:#8f9f5c;
-}
-
-@media (max-width:1200px){
-
-    .related-grid{
-        grid-template-columns:repeat(3,1fr);
-        gap:25px;
+        padding-top: 30px;
     }
 
-}
+    .producto-related h2 {
+        font-size: 30px;
 
-@media (max-width:900px){
-
-    .related-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:20px;
+        margin-bottom: 35px;
     }
 
-    .subtitulos,
-    .subtitulos2,
-    .subtitulos3,
-    .subtitulos4,
-    .subtitulos5,
-    .subtitulos6,
-    .subtitulos7,
-    .subtitulos8,
-    .subtitulos9,
-    .subtitulos10{
-        left:15px;
+    .producto-related-container {
+        gap: 20px;
     }
 
-    .related h2,
-    .related2 h2,
-    .related3 h2,
-    .related4 h2,
-    .related5 h2,
-    .related6 h2,
-    .related7 h2,
-    .related8 h2,
-    .related9 h2,
-    .related10 h2{
-        font-size:22px;
+    .producto-related-grid {
+        gap: 25px;
     }
 
+    .producto-arrow {
+        width: 30px;
+        height: 40px;
+
+        font-size: 32px;
+    }
 }
+@media (max-width: 768px) {
 
-@media (max-width:600px){
+    .producto-related {
+        width: 100%;
 
-    .related-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:15px;
+        margin: 40px auto;
+
+        padding: 25px 5px 0;
+
+        box-sizing: border-box;
+    }
+    .producto-related h2 {
+        width: 100%;
+
+        font-size: 22px;
+
+        line-height: 28px;
+
+        text-align: center;
+
+        margin: 0 0 25px;
+
+        padding: 0 10px;
+
+        box-sizing: border-box;
+    }
+    .producto-related-container {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 5px;
+
+        box-sizing: border-box;
+    }
+    .producto-related-grid {
+        display: flex;
+
+        flex-direction: row;
+
+        flex-wrap: nowrap;
+
+        justify-content: center;
+
+        align-items: flex-start;
+
+        gap: 10px;
+
+        width: auto;
+
+        box-sizing: border-box;
+    }
+    .producto-related-grid .product-card:nth-child(3) {
+        display: none;
+    }
+    .producto-arrow {
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        width: 25px;
+        height: 40px;
+
+        padding: 0;
+
+        border: none;
+
+        background: transparent;
+
+        font-size: 32px;
+
+        line-height: 1;
+
+        color: #555;
+
+        cursor: pointer;
+
+        flex-shrink: 0;
     }
 
-    .subtitulos,
-    .subtitulos2,
-    .subtitulos3,
-    .subtitulos4,
-    .subtitulos5,
-    .subtitulos6,
-    .subtitulos7,
-    .subtitulos8,
-    .subtitulos9,
-    .subtitulos10{
-        left:10px;
-        top:0;
+    .producto-arrow:hover {
+        color: #8f9f5c;
     }
+}
+@media (max-width: 480px) {
 
-    .related h2,
-    .related2 h2,
-    .related3 h2,
-    .related4 h2,
-    .related5 h2,
-    .related6 h2,
-    .related7 h2,
-    .related8 h2,
-    .related9 h2,
-    .related10 h2{
-        font-size:18px;
+    .producto-related {
+        width: 100%;
+
+        margin: 35px auto;
+
+        padding-top: 20px;
     }
+    .producto-related h2 {
+        font-size: 20px;
 
-}
+        line-height: 25px;
 
-@media (max-width:420px){
+        margin-bottom: 20px;
 
-    .related-grid{
-        grid-template-columns:1fr;
+        padding: 0 8px;
     }
+    .producto-related-container {
+        gap: 3px;
+    }
+    .producto-related-grid {
+        gap: 8px;
+    }
+    .producto-arrow {
+        width: 22px;
+        height: 35px;
 
-}
-
-.related,
-.related2,
-.related3,
-.related4,
-.related5,
-.related6,
-.related7,
-.related8,
-.related9,
-.related10{
-    padding:20px 40px;
-}
-
-.related:last-child,
-.related2:last-child,
-.related3:last-child,
-.related4:last-child,
-.related5:last-child,
-.related6:last-child,
-.related7:last-child,
-.related8:last-child,
-.related9:last-child,
-.related10:last-child{
-    margin-bottom:40px;
-}
-
-.subtitulos,
-.subtitulos2,
-.subtitulos3,
-.subtitulos4,
-.subtitulos5,
-.subtitulos6,
-.subtitulos7,
-.subtitulos8,
-.subtitulos9,
-.subtitulos10{
-    margin-bottom:20px;
-}
-
-.product-card{
-    transition:transform .3s ease, box-shadow .3s ease;
-}
-
-.product-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
+        font-size: 28px;
+    }
+    .producto-related-grid .product-card:nth-child(3) {
+        display: none;
+    }
 }

@@ -23,15 +23,15 @@ function CategoryCard({
         />
 
         <div className="category-info">
+
           <h3>{titulo}</h3>
 
           <p>{descripcion}</p>
 
-          <button
-            style={{ background: color }}
-          >
+          <button style={{ background: color }}>
             Ver producto →
           </button>
+
         </div>
 
       </div>

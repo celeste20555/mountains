@@ -9,6 +9,7 @@ function ProductCard({
   const abrirProducto = () => {
     if (setMostrarProducto) {
       setMostrarProducto(true);
+
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -18,9 +19,14 @@ function ProductCard({
 
   return (
     <div className="product-card">
-      <img src={imagen} alt={nombre} />
+
+      <img
+        src={imagen}
+        alt={nombre}
+      />
 
       <div className="card-info">
+
         <h3>{nombre}</h3>
 
         <p>{precio}</p>
@@ -28,7 +34,9 @@ function ProductCard({
         <button onClick={abrirProducto}>
           Ver producto →
         </button>
+
       </div>
+
     </div>
   );
 }

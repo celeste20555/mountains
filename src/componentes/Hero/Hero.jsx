@@ -32,9 +32,11 @@ function Hero() {
       </section>
 
       <div className="frase">
-        ¡ Todo lo que necesitás para tu
-        <span> próxima escapada </span>
-        está a un clic ¡
+        <p>
+          ¡Todo lo que necesitás para tu
+          <span> próxima escapada </span>
+          está a un clic!
+        </p>
       </div>
     </>
   );

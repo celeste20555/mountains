@@ -6,22 +6,22 @@ import carpaRoja from "../../../imagenes/carpa_roja.png";
 
 function ProductGallery() {
   return (
-    <section className="gallery">
+    <section className="product-gallery">
 
-      <div className="main-image">
+      <div className="product-main-image">
         <img
           src={carpaVerde}
           alt="Carpa Verde"
         />
       </div>
 
-      <div className="gallery-bottom">
+      <div className="product-gallery-carousel">
 
-        <button className="arrow">
-          &lt;
+        <button className="product-gallery-arrow product-gallery-left">
+          &#8249;
         </button>
 
-        <div className="mini-images">
+        <div className="product-gallery-images">
 
           <img
             src={carpaVerde}
@@ -40,8 +40,8 @@ function ProductGallery() {
 
         </div>
 
-        <button className="arrow">
-          &gt;
+        <button className="product-gallery-arrow product-gallery-right">
+          &#8250;
         </button>
 
       </div>

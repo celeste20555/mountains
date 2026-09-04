@@ -1,10 +1,8 @@
 import "./HomeProducts.css";
 import ProductCard from "../ProductCard/ProductCard";
-
 import producto1 from "../../imagenes/Campera.png";
 import producto2 from "../../imagenes/Gorra.png";
 import producto3 from "../../imagenes/Bolsegos.png";
-
 function HomeProducts({ setMostrarProducto }) {
   return (
     <section className="home-products-section">
