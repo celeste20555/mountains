@@ -1,30 +1,23 @@
 import "./Busqueda.css";
+import { categorias } from "../RelatedProducts/RelatedProducts";
 import ProductCard from "../ProductCard/ProductCard";
-import Carpa from "../../imagenes/Carpa.png";
-import Bolsa from "../../imagenes/Bolsa_dedormir.png";
-import Gorra from "../../imagenes/Gorra.png";
 import Montanias from "../../imagenes/Montanias.png";
 function Busqueda({ textoBusqueda, setMostrarBusqueda }) {
-  const productos = [
-    {
-      imagen: Carpa,
-      nombre: "Carpa explorer 2p",
-      precio: "$30.000",
-    },
-    {
-      imagen: Gorra,
-      nombre: "Gorra de campo",
-      precio: "$5.000",
-    },
-    {
-      imagen: Bolsa,
-      nombre: "Bolsa de dormir",
-      precio: "$25.000",
-    },
-  ];
-  const resultados = productos.filter((producto) =>
-    producto.nombre.toLowerCase().includes(textoBusqueda.toLowerCase())
+
+  const productos = categorias.flatMap((categoria) =>
+    categoria.productos.map((producto) => ({
+      ...producto,
+      categoria: categoria.titulo,
+    }))
   );
+
+  const resultados = productos.filter((producto) =>
+    producto.nombre
+      .toLowerCase()
+      .includes(textoBusqueda.toLowerCase())
+  );
+
+
   return (
     <main className="busqueda">
       <div className="ruta">

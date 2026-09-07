@@ -19,7 +19,7 @@ import Linterna from "../../imagenes/Linterna.png";
 import Mapa from "../../imagenes/Mapa.png";
 import Radio from "../../imagenes/Radio.png";
 
-const categorias = [
+export const categorias = [
   {
     clase: "related",
     subtitulo: "subtitulos",

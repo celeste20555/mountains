@@ -1,6 +1,9 @@
 import "./Navbar.css";
 import logo from "../../imagenes/logo.png";
+import Carpita from "../../imagenes/Carpita.svg"
 import { useState } from "react";
+
+import { categorias } from "../RelatedProducts/RelatedProducts";
 
 import {
   FiSearch,
@@ -13,13 +16,28 @@ function Navbar({
   setMostrarBusqueda,
   setMostrarProductos,
   setMostrarProducto,
+  setCarritoAbierto,
   textoBusqueda,
   setTextoBusqueda,
 }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [mostrarSugerencias, setMostrarSugerencias] = useState(true);
+
+  const productos = categorias.flatMap((categoria) =>
+    categoria.productos
+  );
+
+  const sugerencias = productos
+    .filter((producto) =>
+      producto.nombre
+        .toLowerCase()
+        .includes(textoBusqueda.toLowerCase())
+    )
+    .slice(0, 5);
 
   const buscar = (e) => {
     if (e.key === "Enter") {
+      setMostrarSugerencias(false);
       setMostrarBusqueda(true);
       setMostrarProductos(false);
       setMostrarProducto(false);
@@ -31,6 +49,7 @@ function Navbar({
     setMostrarProducto(false);
     setTextoBusqueda("");
     setMenuAbierto(false);
+    setCarritoAbierto(false);
 
     window.scrollTo({
       top: 0,
@@ -48,25 +67,52 @@ function Navbar({
           />
         </div>
 
-        <div className="navbar-search">
+        <div className={`navbar-search ${mostrarSugerencias &&
+          textoBusqueda.trim() !== "" &&
+          sugerencias.length > 0
+          ? "con-sugerencias"
+          : ""
+          }`}>
           <FiSearch />
 
           <input
             type="text"
             placeholder="Buscar productos..."
             value={textoBusqueda}
-            onChange={(e) => setTextoBusqueda(e.target.value)}
-            onKeyDown={buscar}
+            onChange={(e) => {
+              setTextoBusqueda(e.target.value);
+              setMostrarSugerencias(true);
+            }}
           />
+
+          {mostrarSugerencias &&
+            textoBusqueda.trim() !== "" &&
+            sugerencias.length > 0 && (
+              <div className="sugerencias">
+                {sugerencias.map((producto, index) => (
+                  <div
+                    className="sugerencia"
+                    key={index}
+                    onClick={() => {
+                      setTextoBusqueda(producto.nombre);
+                      setMostrarSugerencias(false);
+                      setMostrarBusqueda(true);
+                      setMostrarProductos(false);
+                      setMostrarProducto(false);
+                    }}
+                  >
+                    <img src={Carpita} alt={producto.nombre} />
+                    <span>{producto.nombre}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
         </div>
 
         <div className="navbar-icons">
           <FiShoppingCart
-            onClick={() =>
-              alert(
-                "El carrito por el momento no está disponible.\n\nContactanos por WhatsApp para realizar tu compra(era la parte de maria)."
-              )
-            }
+            onClick={() => setCarritoAbierto(true)}
           />
 
           <FiUser />

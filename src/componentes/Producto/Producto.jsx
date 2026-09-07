@@ -5,13 +5,16 @@ import ProductInfo from "./ProductInfo/ProductInfo";
 import Reviews from "./Reviews/Reviews";
 import RelatedProduct from "./RelatedProduct/RelatedProduct";
 
-function Producto() {
+function Producto({ carrito, setCarrito }) {
   return (
     <main className="producto">
 
       <div className="producto-top">
         <ProductGallery />
-        <ProductInfo />
+        <ProductInfo
+          carrito={carrito}
+          setCarrito={setCarrito}
+        />
       </div>
 
       <Reviews />
