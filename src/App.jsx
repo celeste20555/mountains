@@ -9,11 +9,14 @@ import ListadeProducts from "./componentes/ListadeProducts/ListadeProducts";
 import Footer from "./componentes/Footer/Footer";
 import Busqueda from "./componentes/Busqueda/Busqueda";
 import Producto from "./componentes/Producto/Producto";
+import Carrito from "./componentes/Carrito/Carrito";
 
 function App() {
   const [mostrarBusqueda, setMostrarBusqueda] = useState(false);
   const [mostrarProductos, setMostrarProductos] = useState(false);
   const [mostrarProducto, setMostrarProducto] = useState(false);
+  const [carritoAbierto, setCarritoAbierto] = useState(false);
+  const [carrito, setCarrito] = useState([]);
   const [textoBusqueda, setTextoBusqueda] = useState("");
 
   return (
@@ -22,9 +25,9 @@ function App() {
         setMostrarBusqueda={setMostrarBusqueda}
         setMostrarProductos={setMostrarProductos}
         setMostrarProducto={setMostrarProducto}
+        setCarritoAbierto={setCarritoAbierto}
         textoBusqueda={textoBusqueda}
-        setTextoBusqueda={setTextoBusqueda}
-      />
+        setTextoBusqueda={setTextoBusqueda} />
 
       {mostrarBusqueda ? (
         <>
@@ -36,7 +39,10 @@ function App() {
         </>
       ) : mostrarProducto ? (
         <>
-          <Producto />
+          <Producto
+            carrito={carrito}
+            setCarrito={setCarrito}
+          />
           <Footer />
         </>
       ) : mostrarProductos ? (
@@ -58,6 +64,14 @@ function App() {
 
           <Footer />
         </>
+      )}
+
+      {carritoAbierto && (
+        <Carrito
+          setCarritoAbierto={setCarritoAbierto}
+          carrito={carrito}
+          setCarrito={setCarrito}
+        />
       )}
     </>
   );

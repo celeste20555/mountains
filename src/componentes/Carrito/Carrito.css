@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.carrito {
+    width: 550px;
+    height: 750px;
+    background-color: #F2ECDF;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    border-radius: 10px;
+    z-index: 100;
+}
+
+.header-carrito {
+    margin: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.carritoA img {
+    width: 24px;
+}
+
+.carritoA {
+    width: 40px;
+    height: 40px;
+    background-color: #6F7B38;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.lineaC {
+    margin: 15px;
+    width: 95%;
+    height: 1.6px;
+    background-color: #FFFFFE;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.30)
+}
+
+.cerrar-carrito {
+    margin-left: auto;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.productoC {
+    margin-left: 15px;
+}
+
+.productoC img {
+    object-fit: cover;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.cardC {
+    display: flex;
+    gap: 20px;
+}
+
+.infoCard {
+    flex: 0.9;
+    font-size: 16px;
+    color: #224215;
+}
+
+.infoCard p {
+    font-size: 25px;
+    color: #91A45D;
+    font-style: italic;
+}
+
+.inferior {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.funciones {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.funciones img {
+    display: block;
+    margin-left: 20px;
+}
+
+.funciones button {
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    padding: 5px;
+    width: 30px;
+    background-color: #b88e2551;
+    color: black !important;
+    font-size: 18px;
+}
+
+.funciones img {
+    width: 25px;
+}
+
+.mini {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    font-size: 18px;
+    color: #3d3d3d;
+    font-family: "Libre Baskerville", serif;
+}
+
+.mini2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    font-size: 18px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.botones button {
+    width: 480px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.button-f {
+    background-color: #6F7B38;
+    color: white;
+}
+
+.button-s {
+    background-color: transparent;
+    color: black;
+    border: 2px solid #868B60;
+}
+
+.detalle {
+    color: #3F3E39;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.detalle2 {
+    color: #4D7230;
+    font-size: 20px;
+}
+
+.detalle3 {
+    color: #998559;
+    font-size: 20px;
+}
+
+@media (max-width: 760px) {
+    .carrito {
+        width: 100%;
+        border: none;
+        height: 100vh;
+        position: fixed;
+        overflow-y: auto;
+        overscroll-behavior: none;
+    }
+}

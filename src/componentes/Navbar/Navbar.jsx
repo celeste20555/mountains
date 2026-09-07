@@ -13,6 +13,7 @@ function Navbar({
   setMostrarBusqueda,
   setMostrarProductos,
   setMostrarProducto,
+  setCarritoAbierto,
   textoBusqueda,
   setTextoBusqueda,
 }) {
@@ -31,6 +32,7 @@ function Navbar({
     setMostrarProducto(false);
     setTextoBusqueda("");
     setMenuAbierto(false);
+    setCarritoAbierto(false);
 
     window.scrollTo({
       top: 0,
@@ -62,11 +64,7 @@ function Navbar({
 
         <div className="navbar-icons">
           <FiShoppingCart
-            onClick={() =>
-              alert(
-                "El carrito por el momento no está disponible.\n\nContactanos por WhatsApp para realizar tu compra(era la parte de maria)."
-              )
-            }
+            onClick={() => setCarritoAbierto(true)}
           />
 
           <FiUser />
