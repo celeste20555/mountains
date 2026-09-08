@@ -69,7 +69,9 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
 
                 <div className="botones">
                     <button className="button-f">Finalizar compra</button>
-                    <button className="button-s">Seguir comprando</button>
+                    <button className="button-s"
+                        onClick={() => setCarritoAbierto(false)}
+                    >Seguir comprando</button>
                 </div>
             </div>
         </div>
