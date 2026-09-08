@@ -5,8 +5,44 @@ import ProductCard from "../../ProductCard/ProductCard";
 import Campera from "../../../imagenes/Campera.png";
 import Bolsegos from "../../../imagenes/Bolsegos.png";
 import Gorra from "../../../imagenes/Gorra.png";
+import React, { useState } from "react";
 
 function RelatedProduct() {
+  const [inicio, setInicio] = useState(0);
+
+  const productos = [
+    {
+      imagen: Campera,
+      nombre: "Campera térmica",
+      precio: "$35.000",
+    },
+    {
+      imagen: Gorra,
+      nombre: "Gorro térmico",
+      precio: "$10.000",
+    },
+    {
+      imagen: Bolsegos,
+      nombre: "Bolsegos",
+      precio: "$33.000",
+    },
+    {
+      imagen: Bolsegos,
+      nombre: "Bolsegos",
+      precio: "$33.000",
+    },
+    {
+      imagen: Gorra,
+      nombre: "Gorro térmico",
+      precio: "$10.000",
+    },
+    {
+      imagen: Campera,
+      nombre: "Campera térmica",
+      precio: "$35.000",
+    },
+  ];
+
   return (
     <section className="producto-related">
 
@@ -14,33 +50,40 @@ function RelatedProduct() {
 
       <div className="producto-related-container">
 
-        <button className="producto-arrow">
+        <button className="producto-arrow"
+          onClick={() => {
+            if (inicio === 0) {
+              setInicio(3);
+            } else {
+              setInicio(inicio - 3);
+            }
+          }}
+        >
           &lt;
         </button>
 
         <div className="producto-related-grid">
 
-          <ProductCard
-            imagen={Campera}
-            nombre="Campera térmica"
-            precio="$30.000"
-          />
-
-          <ProductCard
-            imagen={Bolsegos}
-            nombre="Bolsegos abrigados"
-            precio="$30.000"
-          />
-
-          <ProductCard
-            imagen={Gorra}
-            nombre="Gorra negra"
-            precio="$30.000"
-          />
+          {productos.slice(inicio, inicio + 3).map((producto, index) => (
+            <ProductCard
+              key={index}
+              imagen={producto.imagen}
+              nombre={producto.nombre}
+              precio={producto.precio}
+            />
+          ))}
 
         </div>
 
-        <button className="producto-arrow">
+        <button className="producto-arrow"
+          onClick={() => {
+            if (inicio === 3) {
+              setInicio(0);
+            } else {
+              setInicio(inicio + 3);
+            }
+          }}
+        >
           &gt;
         </button>
 
