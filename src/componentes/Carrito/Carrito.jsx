@@ -9,6 +9,12 @@ import CarritoA from "../../imagenes/CarritoA.svg";
 
 export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
 
+    const subtotal = carrito.reduce((total, producto) => {
+        return total + producto.precio * producto.cantidad;
+    }, 0);
+
+    const subtotalFormateado = subtotal.toLocaleString("es-AR");
+
     return (
         <div className="carrito">
             <div className="header-carrito">
@@ -17,7 +23,7 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
                 </div>
                 <div>
                     <h2>Tu carrito</h2>
-                    <p>2 productos</p>
+                    <p>{carrito.reduce((total, producto) => total + producto.cantidad, 0)} productos</p>
                 </div>
 
                 <FiX
@@ -45,7 +51,7 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
             <div className="carrito-resumen">
                 <div className="mini">
                     <span>SubTotal</span>
-                    <p className="detalle">$80.000</p>
+                    <p className="detalle">${subtotalFormateado}</p>
                 </div>
 
                 <div className="mini">
@@ -58,7 +64,7 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
 
                 <div className="mini2">
                     <span>Total</span>
-                    <p className="detalle3">$80.000</p>
+                    <p className="detalle3">${subtotalFormateado}</p>
                 </div>
 
                 <div className="botones">
