@@ -1,8 +1,14 @@
 import "./Hero.css";
 import carpa from "../../imagenes/carpa_grande.png";
 import { FaWhatsapp } from "react-icons/fa";
-
 function Hero() {
+  const contactarWhatsApp = () => {
+    const numero = "5491127726277";
+    const mensaje =
+      "Hola Buenas queria hacer una consulta de 𖥧 𝐌𝐢𝐧𝐢'𝐬 𝐌𝐨𝐮𝐧𝐭𝐚𝐢𝐧𝐬 𖥧";
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+  };
   return (
     <>
       <section
@@ -15,7 +21,6 @@ function Hero() {
             <br />
             <span>Mountain</span>
           </h1>
-
           <p>
             ¡Tu próxima aventura empieza acá! Equipate con lo mejor para
             disfrutar de la libertad al aire libre, desde la cumbre más alta
@@ -23,14 +28,12 @@ function Hero() {
             tecnología, resistencia y comodidad para que tu única preocupación
             sea disfrutar del paisaje.
           </p>
-
-          <button>
+          <button onClick={contactarWhatsApp}>
             <FaWhatsapp className="whatsapp-icon" />
             Contactanos
           </button>
         </div>
       </section>
-
       <div className="frase">
         <p>
           ¡Todo lo que necesitás para tu
@@ -41,5 +44,4 @@ function Hero() {
     </>
   );
 }
-
 export default Hero;
