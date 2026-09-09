@@ -12,7 +12,7 @@ export default function Carrito({
     }, 0);
     const subtotalFormateado = subtotal.toLocaleString("es-AR");
     const finalizarCompra = () => {
-        const numero = "5491127726277";
+        const numero = "5492901535032";
         const productos = carrito
             .map((producto) => {
                 return `${producto.cantidad}x ${producto.nombre} - $${(

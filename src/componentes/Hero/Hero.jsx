@@ -3,7 +3,7 @@ import carpa from "../../imagenes/carpa_grande.png";
 import { FaWhatsapp } from "react-icons/fa";
 function Hero() {
   const contactarWhatsApp = () => {
-    const numero = "5491127726277";
+    const numero = "5492901535032";
     const mensaje =
       "Hola Buenas queria hacer una consulta de 𖥧 𝐌𝐢𝐧𝐢'𝐬 𝐌𝐨𝐮𝐧𝐭𝐚𝐢𝐧𝐬 𖥧";
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
