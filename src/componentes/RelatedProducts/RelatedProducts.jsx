@@ -1,21 +1,17 @@
 import "./RelatedProducts.css";
 import ProductCard from "../ProductCard/ProductCard";
-
 import Carpa from "../../imagenes/Carpa.png";
 import Amaca_Paraguaya from "../../imagenes/Amaca_paraguaya.png";
 import Bolsa_dedormir from "../../imagenes/Bolsa_dedormir.png";
 import Silla_desplegable from "../../imagenes/Silla_desplegable.png";
-
 import Campera from "../../imagenes/Campera.png";
 import Bolsegos from "../../imagenes/Bolsegos.png";
 import Gorra from "../../imagenes/Gorra.png";
 import Termico from "../../imagenes/Termico.png";
-
 import Panel from "../../imagenes/Panel.png";
 import Linterna from "../../imagenes/Linterna.png";
 import Mapa from "../../imagenes/Mapa.png";
 import Radio from "../../imagenes/Radio.png";
-
 export const categorias = [
   {
     clase: "related",
@@ -307,55 +303,40 @@ export const categorias = [
     ],
   },
 ];
-
 function RelatedProducts({
   setMostrarProducto,
   orden,
-  categoria,
 }) {
-  const categoriasFiltradas = categorias.filter((cat) => {
-    if (!categoria || categoria === "Todas las categorías") {
-      return true;
-    }
-
-    return cat.titulo === categoria;
-  });
-
   return (
     <div className="related-products">
-      {categoriasFiltradas.map((categoria, index) => {
+      {categorias.map((categoria, index) => {
         const productosOrdenados = [...categoria.productos].sort(
           (a, b) => {
             const precioA = Number(
               a.precio.replace("$", "").replace(".", "")
             );
-
             const precioB = Number(
               b.precio.replace("$", "").replace(".", "")
             );
-
             if (orden === "Mayor precio") {
               return precioB - precioA;
             }
-
             if (orden === "Menor precio") {
               return precioA - precioB;
             }
-
             return 0;
           }
         );
-
         return (
           <section
             className={`related-section ${categoria.clase}`}
+            id={`categoria-${categoria.titulo}`}
             key={index}
           >
             <div className={categoria.subtitulo}>
               <h2>{categoria.titulo}</h2>
               <h3>{categoria.descripcion}</h3>
             </div>
-
             <div className="related-container">
               <div className="related-grid">
                 {productosOrdenados.map((producto, i) => (
@@ -372,8 +353,8 @@ function RelatedProducts({
           </section>
         );
       })}
+
     </div>
   );
 }
-
 export default RelatedProducts;

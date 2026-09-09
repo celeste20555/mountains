@@ -19,6 +19,17 @@ function App() {
   const [carrito, setCarrito] = useState([]);
   const [textoBusqueda, setTextoBusqueda] = useState("");
 
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(
+    "Todas las categorías"
+  );
+
+  const irACategoria = (categoria) => {
+    setCategoriaSeleccionada(categoria);
+    setMostrarProductos(true);
+    setMostrarProducto(false);
+    setMostrarBusqueda(false);
+  };
+
   return (
     <>
       <Navbar
@@ -27,7 +38,8 @@ function App() {
         setMostrarProducto={setMostrarProducto}
         setCarritoAbierto={setCarritoAbierto}
         textoBusqueda={textoBusqueda}
-        setTextoBusqueda={setTextoBusqueda} />
+        setTextoBusqueda={setTextoBusqueda}
+      />
 
       {mostrarBusqueda ? (
         <>
@@ -35,6 +47,7 @@ function App() {
             textoBusqueda={textoBusqueda}
             setMostrarBusqueda={setMostrarBusqueda}
           />
+
           <Footer />
         </>
       ) : mostrarProducto ? (
@@ -43,20 +56,26 @@ function App() {
             carrito={carrito}
             setCarrito={setCarrito}
           />
+
           <Footer />
         </>
       ) : mostrarProductos ? (
         <>
           <ListadeProducts
             setMostrarProducto={setMostrarProducto}
+            categoriaSeleccionada={categoriaSeleccionada}
+            setCategoriaSeleccionada={setCategoriaSeleccionada}
           />
+
           <Footer />
         </>
       ) : (
         <>
           <Hero />
 
-          <Categories />
+          <Categories
+            irACategoria={irACategoria}
+          />
 
           <HomeProducts
             setMostrarProducto={setMostrarProducto}
