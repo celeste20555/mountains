@@ -1,8 +1,13 @@
 import "./ListadeProducts.css";
-
+import { useState } from "react";
 import RelatedProducts from "../RelatedProducts/RelatedProducts";
 
 function ListadeProducts({ setMostrarProducto }) {
+  const [orden, setOrden] = useState("Mas vendidos");
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(
+    "Todas las categorías"
+  );
+
   return (
     <>
       <div className="ofertas">
@@ -16,23 +21,72 @@ function ListadeProducts({ setMostrarProducto }) {
         </button>
 
         <div className="derecha">
-          <select>
-            <option>Mas vendidos</option>
-            <option>Mayor precio</option>
-            <option>Menor precio</option>
+          {/* ORDENAR PRODUCTOS */}
+          <select
+            value={orden}
+            onChange={(e) => setOrden(e.target.value)}
+          >
+            <option value="Mas vendidos">Mas vendidos</option>
+            <option value="Mayor precio">Mayor precio</option>
+            <option value="Menor precio">Menor precio</option>
           </select>
 
-          <select>
-            <option>Todas las categorías</option>
-            <option>Equipamiento para dormir</option>
-            <option>Ropa y protección</option>
-            <option>Iluminación y energía</option>
+          {/* FILTRAR POR CATEGORÍA */}
+          <select
+            value={categoriaSeleccionada}
+            onChange={(e) => setCategoriaSeleccionada(e.target.value)}
+          >
+            <option value="Todas las categorías">
+              Todas las categorías
+            </option>
+
+            <option value="Equipamiento para dormir">
+              Equipamiento para dormir
+            </option>
+
+            <option value="Ropa y protección">
+              Ropa y protección
+            </option>
+
+            <option value="Iluminación y Energía">
+              Iluminación y Energía
+            </option>
+
+            <option value="Utensilios de Cocina">
+              Utensilios de Cocina
+            </option>
+
+            <option value="Artículos de Limpieza">
+              Artículos de Limpieza
+            </option>
+
+            <option value="Herramientas y Accesorios">
+              Herramientas y Accesorios
+            </option>
+
+            <option value="Alimentos y Bebidas">
+              Alimentos y Bebidas
+            </option>
+
+            <option value="Salud y Primeros Auxilios">
+              Salud y Primeros Auxilios
+            </option>
+
+            <option value="Comunicación y Navegación">
+              Comunicación y Navegación
+            </option>
+
+            <option value="Equipamiento para el Campo">
+              Equipamiento para el Campo
+            </option>
           </select>
         </div>
       </section>
 
       <RelatedProducts
         setMostrarProducto={setMostrarProducto}
+        orden={orden}
+        categoria={categoriaSeleccionada}
       />
     </>
   );

@@ -1,99 +1,69 @@
 .producto-related {
     width: 90%;
-
     margin: 80px auto;
-
     padding-top: 40px;
-
     border-top: 1px solid #d5cfb8;
-
     box-sizing: border-box;
 }
+
 .producto-related h2 {
     width: 100%;
-
     text-align: center;
-
     font-size: 38px;
-
     font-family: "Libre Baskerville", serif;
-
     font-style: italic;
-
     color: #1f1f1f;
-
     margin: 0 0 50px;
-
     padding: 0;
-
     box-sizing: border-box;
 }
+
 .producto-related-container {
     width: 100%;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 30px;
-
     box-sizing: border-box;
 }
+
 .producto-related-grid {
     display: flex;
-
     flex-direction: row;
-
     flex-wrap: nowrap;
-
     justify-content: center;
-
     align-items: flex-start;
-
     gap: 50px;
-
     box-sizing: border-box;
 }
+
 .producto-arrow {
     width: 35px;
     height: 45px;
-
     border: none;
-
     background: transparent;
-
     font-size: 35px;
-
     line-height: 1;
-
     color: #555;
-
     cursor: pointer;
-
     padding: 0;
-
     flex-shrink: 0;
-
     transition: color 0.3s ease;
 }
+
 .producto-arrow:hover {
     color: #8f9f5c;
 }
-@media (max-width: 900px) {
 
+@media (max-width: 900px) {
     .producto-related {
         width: 90%;
-
         margin: 60px auto;
-
         padding-top: 30px;
     }
 
     .producto-related h2 {
         font-size: 30px;
-
         margin-bottom: 35px;
     }
 
@@ -108,92 +78,65 @@
     .producto-arrow {
         width: 30px;
         height: 40px;
-
         font-size: 32px;
     }
 }
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
     .producto-related {
         width: 100%;
-
         margin: 40px auto;
-
         padding: 25px 5px 0;
-
         box-sizing: border-box;
     }
+
     .producto-related h2 {
         width: 100%;
-
         font-size: 22px;
-
         line-height: 28px;
-
         text-align: center;
-
         margin: 0 0 25px;
-
         padding: 0 10px;
-
         box-sizing: border-box;
     }
+
     .producto-related-container {
         width: 100%;
-
         display: flex;
-
         justify-content: center;
-
         align-items: center;
-
         gap: 5px;
-
         box-sizing: border-box;
     }
+
     .producto-related-grid {
         display: flex;
-
         flex-direction: row;
-
         flex-wrap: nowrap;
-
         justify-content: center;
-
         align-items: flex-start;
-
         gap: 10px;
-
         width: auto;
-
         box-sizing: border-box;
     }
+
     .producto-related-grid .product-card:nth-child(3) {
         display: none;
     }
+
     .producto-arrow {
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         width: 25px;
         height: 40px;
-
         padding: 0;
-
         border: none;
-
         background: transparent;
-
         font-size: 32px;
-
         line-height: 1;
-
         color: #555;
-
         cursor: pointer;
-
         flex-shrink: 0;
     }
 
@@ -201,37 +144,227 @@
         color: #8f9f5c;
     }
 }
-@media (max-width: 480px) {
 
+@media (max-width: 480px) {
     .producto-related {
         width: 100%;
-
         margin: 35px auto;
-
         padding-top: 20px;
     }
+
     .producto-related h2 {
         font-size: 20px;
-
         line-height: 25px;
-
         margin-bottom: 20px;
-
         padding: 0 8px;
     }
+
     .producto-related-container {
         gap: 3px;
     }
+
     .producto-related-grid {
         gap: 8px;
     }
+
     .producto-arrow {
         width: 22px;
         height: 35px;
-
         font-size: 28px;
     }
+
     .producto-related-grid .product-card:nth-child(3) {
         display: none;
+    }
+}
+
+/* Categorías */
+
+.related,
+.related2,
+.related3,
+.related4,
+.related5,
+.related6,
+.related7,
+.related8,
+.related9,
+.related10 {
+    padding: 20px 40px;
+}
+
+.related:last-child,
+.related2:last-child,
+.related3:last-child,
+.related4:last-child,
+.related5:last-child,
+.related6:last-child,
+.related7:last-child,
+.related8:last-child,
+.related9:last-child,
+.related10:last-child {
+    margin-bottom: 40px;
+}
+
+.subtitulos,
+.subtitulos2,
+.subtitulos3,
+.subtitulos4,
+.subtitulos5,
+.subtitulos6,
+.subtitulos7,
+.subtitulos8,
+.subtitulos9,
+.subtitulos10 {
+    margin-bottom: 20px;
+}
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.related,
+.related2,
+.related3,
+.related4,
+.related5,
+.related6,
+.related7,
+.related8,
+.related9,
+.related10 {
+    width: 100%;
+    padding: 40px 45px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+    .related,
+    .related2,
+    .related3,
+    .related4,
+    .related5,
+    .related6,
+    .related7,
+    .related8,
+    .related9,
+    .related10 {
+        padding: 35px 30px;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .subtitulos h2,
+    .subtitulos2 h2,
+    .subtitulos3 h2,
+    .subtitulos4 h2,
+    .subtitulos5 h2,
+    .subtitulos6 h2,
+    .subtitulos7 h2,
+    .subtitulos8 h2,
+    .subtitulos9 h2,
+    .subtitulos10 h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .related,
+    .related2,
+    .related3,
+    .related4,
+    .related5,
+    .related6,
+    .related7,
+    .related8,
+    .related9,
+    .related10 {
+        padding: 25px 15px;
+    }
+
+    .subtitulos,
+    .subtitulos2,
+    .subtitulos3,
+    .subtitulos4,
+    .subtitulos5,
+    .subtitulos6,
+    .subtitulos7,
+    .subtitulos8,
+    .subtitulos9,
+    .subtitulos10 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .subtitulos h2,
+    .subtitulos2 h2,
+    .subtitulos3 h2,
+    .subtitulos4 h2,
+    .subtitulos5 h2,
+    .subtitulos6 h2,
+    .subtitulos7 h2,
+    .subtitulos8 h2,
+    .subtitulos9 h2,
+    .subtitulos10 h2 {
+        font-size: 22px;
+    }
+
+    .subtitulos h3,
+    .subtitulos2 h3,
+    .subtitulos3 h3,
+    .subtitulos4 h3,
+    .subtitulos5 h3,
+    .subtitulos6 h3,
+    .subtitulos7 h3,
+    .subtitulos8 h3,
+    .subtitulos9 h3,
+    .subtitulos10 h3 {
+        font-size: 14px;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .related,
+    .related2,
+    .related3,
+    .related4,
+    .related5,
+    .related6,
+    .related7,
+    .related8,
+    .related9,
+    .related10 {
+        padding: 20px 10px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .subtitulos h2,
+    .subtitulos2 h2,
+    .subtitulos3 h2,
+    .subtitulos4 h2,
+    .subtitulos5 h2,
+    .subtitulos6 h2,
+    .subtitulos7 h2,
+    .subtitulos8 h2,
+    .subtitulos9 h2,
+    .subtitulos10 h2 {
+        font-size: 20px;
     }
 }

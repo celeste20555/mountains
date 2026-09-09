@@ -1,9 +1,8 @@
 import "./Producto.css";
-
 import ProductGallery from "./ProductGallery/ProductGallery";
 import ProductInfo from "./ProductInfo/ProductInfo";
 import Reviews from "./Reviews/Reviews";
-import RelatedProduct from "./RelatedProduct/RelatedProduct";
+import RelatedProduct from "../RelatedProducts/RelatedProducts";
 
 function Producto({ carrito, setCarrito }) {
   return (
@@ -24,5 +23,4 @@ function Producto({ carrito, setCarrito }) {
     </main>
   );
 }
-
 export default Producto;

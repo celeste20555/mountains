@@ -1,6 +1,9 @@
 import "./Navbar.css";
+
 import logo from "../../imagenes/logo.png";
-import Carpita from "../../imagenes/Carpita.svg"
+import Carpita from "../../imagenes/Carpita.svg";
+import tent from "../../imagenes/tent-icon.png";
+
 import { useState } from "react";
 
 import { categorias } from "../RelatedProducts/RelatedProducts";
@@ -8,10 +11,10 @@ import { categorias } from "../RelatedProducts/RelatedProducts";
 import {
   FiSearch,
   FiShoppingCart,
-  FiUser,
   FiMenu,
   FiX,
 } from "react-icons/fi";
+
 function Navbar({
   setMostrarBusqueda,
   setMostrarProductos,
@@ -23,8 +26,8 @@ function Navbar({
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [mostrarSugerencias, setMostrarSugerencias] = useState(true);
 
-  const productos = categorias.flatMap((categoria) =>
-    categoria.productos
+  const productos = categorias.flatMap(
+    (categoria) => categoria.productos
   );
 
   const sugerencias = productos
@@ -43,6 +46,7 @@ function Navbar({
       setMostrarProducto(false);
     }
   };
+
   const volverAlHome = () => {
     setMostrarBusqueda(false);
     setMostrarProductos(false);
@@ -56,6 +60,7 @@ function Navbar({
       behavior: "smooth",
     });
   };
+
   return (
     <>
       <header className="navbar">
@@ -67,12 +72,15 @@ function Navbar({
           />
         </div>
 
-        <div className={`navbar-search ${mostrarSugerencias &&
-          textoBusqueda.trim() !== "" &&
-          sugerencias.length > 0
-          ? "con-sugerencias"
-          : ""
-          }`}>
+        <div
+          className={`navbar-search ${
+            mostrarSugerencias &&
+            textoBusqueda.trim() !== "" &&
+            sugerencias.length > 0
+              ? "con-sugerencias"
+              : ""
+          }`}
+        >
           <FiSearch />
 
           <input
@@ -83,6 +91,7 @@ function Navbar({
               setTextoBusqueda(e.target.value);
               setMostrarSugerencias(true);
             }}
+            onKeyDown={buscar}
           />
 
           {mostrarSugerencias &&
@@ -101,13 +110,16 @@ function Navbar({
                       setMostrarProducto(false);
                     }}
                   >
-                    <img src={Carpita} alt={producto.nombre} />
+                    <img
+                      src={Carpita}
+                      alt={producto.nombre}
+                    />
+
                     <span>{producto.nombre}</span>
                   </div>
                 ))}
               </div>
             )}
-
         </div>
 
         <div className="navbar-icons">
@@ -115,7 +127,11 @@ function Navbar({
             onClick={() => setCarritoAbierto(true)}
           />
 
-          <FiUser />
+          <img
+            src={tent}
+            alt="tent"
+            className="tent-icon"
+          />
 
           <FiMenu
             className="menu-icon"
@@ -127,7 +143,9 @@ function Navbar({
       {menuAbierto && (
         <div className="mobile-menu">
           <div className="mobile-header">
-            <FiX onClick={() => setMenuAbierto(false)} />
+            <FiX
+              onClick={() => setMenuAbierto(false)}
+            />
           </div>
 
           <ul>
@@ -156,7 +174,8 @@ function Navbar({
                 volverAlHome();
 
                 setTimeout(() => {
-                  const footer = document.getElementById("contacto");
+                  const footer =
+                    document.getElementById("contacto");
 
                   if (footer) {
                     footer.scrollIntoView({
