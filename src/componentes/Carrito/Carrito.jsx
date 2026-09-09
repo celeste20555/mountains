@@ -1,11 +1,7 @@
 import "./Carrito.css";
 import Card_Carrito from "./Card_Carrito";
-import {
-    FiX,
-} from "react-icons/fi";
-
+import { FiX } from "react-icons/fi";
 import CarritoA from "../../imagenes/CarritoA.svg";
-
 
 export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
 
@@ -15,12 +11,46 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
 
     const subtotalFormateado = subtotal.toLocaleString("es-AR");
 
+    const finalizarCompra = () => {
+        const numero = "5491127726277";
+
+        const productos = carrito
+            .map((producto) => {
+                return `${producto.nombre}
+${producto.descripcion || ""}
+Cantidad: ${producto.cantidad}
+Precio: $${producto.precio * producto.cantidad}`;
+            })
+            .join("\n\n");
+
+        const total = carrito.reduce((total, producto) => {
+            return total + producto.precio * producto.cantidad;
+        }, 0);
+
+        const mensaje = `Buenas! Quería comprar.
+
+Artículos:
+
+${productos}
+
+Total: $${total}
+
+Quedo a la espera, gracias!`;
+
+        const whatsapp = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+        window.open(whatsapp, "_blank");
+    };
+
     return (
         <div className="carrito">
+
             <div className="header-carrito">
+
                 <div className="carritoA">
                     <img src={CarritoA} alt="Carro" />
                 </div>
+
                 <div>
                     <h2>Tu carrito</h2>
                     <p>{carrito.reduce((total, producto) => total + producto.cantidad, 0)} productos</p>
@@ -30,13 +60,16 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
                     className="cerrar-carrito"
                     onClick={() => setCarritoAbierto(false)}
                 />
+
             </div>
 
             <div className="lineaC"></div>
 
             <div className="Lista-cards">
+
                 {carrito.map((producto, index) => (
                     <div key={index}>
+
                         <Card_Carrito
                             producto={producto}
                             carrito={carrito}
@@ -44,11 +77,14 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
                         />
 
                         <div className="lineaC"></div>
+
                     </div>
                 ))}
+
             </div>
 
             <div className="carrito-resumen">
+
                 <div className="mini">
                     <span>SubTotal</span>
                     <p className="detalle">${subtotalFormateado}</p>
@@ -61,19 +97,31 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
 
                 <div className="lineaC"></div>
 
-
                 <div className="mini2">
                     <span>Total</span>
                     <p className="detalle3">${subtotalFormateado}</p>
                 </div>
 
                 <div className="botones">
-                    <button className="button-f">Finalizar compra</button>
-                    <button className="button-s"
+
+                    <button
+                        className="button-f"
+                        onClick={finalizarCompra}
+                    >
+                        Finalizar compra
+                    </button>
+
+                    <button
+                        className="button-s"
                         onClick={() => setCarritoAbierto(false)}
-                    >Seguir comprando</button>
+                    >
+                        Seguir comprando
+                    </button>
+
                 </div>
+
             </div>
+
         </div>
-    )
+    );
 }
