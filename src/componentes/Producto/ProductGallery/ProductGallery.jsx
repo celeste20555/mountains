@@ -1,19 +1,54 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./ProductGallery.css";
 
-import carpaVerde from "../../../imagenes/carpa_verde.png";
-import carpaAzul from "../../../imagenes/carpa_azul.png";
-import carpaRoja from "../../../imagenes/carpa_roja.png";
+export default function ProductGallery({ producto }) {
+  
+  const imagenes = [
+    producto?.imagen,
+    producto?.imagen2,
+    producto?.imagen3,
+  ].filter(Boolean);
 
-function ProductGallery() {
-  const [imagenActual, setImagenActual] = useState(carpaVerde);
+  const [imagenActual, setImagenActual] = useState(
+    imagenes[0] || ""
+  );
+
   const [indice, setIndice] = useState(0);
 
-  const imagenes = [
-    carpaVerde,
-    carpaAzul,
-    carpaRoja,
-  ];
+  useEffect(() => {
+    const nuevasImagenes = [
+      producto?.imagen,
+      producto?.imagen2,
+      producto?.imagen3,
+    ].filter(Boolean);
+
+    setImagenActual(nuevasImagenes[0] || "");
+    setIndice(0);
+  }, [producto]);
+
+  const siguienteImagen = () => {
+    if (imagenes.length <= 1) return;
+
+    const nuevoIndice =
+      indice === imagenes.length - 1
+        ? 0
+        : indice + 1;
+
+    setIndice(nuevoIndice);
+    setImagenActual(imagenes[nuevoIndice]);
+  };
+
+  const anteriorImagen = () => {
+    if (imagenes.length <= 1) return;
+
+    const nuevoIndice =
+      indice === 0
+        ? imagenes.length - 1
+        : indice - 1;
+
+    setIndice(nuevoIndice);
+    setImagenActual(imagenes[nuevoIndice]);
+  };
 
   return (
     <section className="product-gallery">
@@ -21,61 +56,41 @@ function ProductGallery() {
       <div className="product-main-image">
         <img
           src={imagenActual}
-          alt="imagen de la carpa"
+          alt={
+            producto?.nombre ||
+            "Imagen del producto"
+          }
         />
       </div>
 
       <div className="product-gallery-carousel">
 
-        <button className="product-gallery-arrow product-gallery-left"
-          onClick={() => {
-            if (indice === 0) {
-              setIndice(imagenes.length - 1);
-              setImagenActual(imagenes[imagenes.length - 1]);
-            } else {
-              setIndice(indice - 1);
-              setImagenActual(imagenes[indice - 1]);
-            }
-          }}
+        <button
+          className="product-gallery-arrow product-gallery-left"
+          onClick={anteriorImagen}
         >
           &#8249;
         </button>
 
         <div className="product-gallery-images">
 
-          <img
-            src={carpaVerde}
-            alt="Carpa Verde"
-            onClick={() => setImagenActual(carpaVerde)}
-          />
-
-          <img
-            src={carpaAzul}
-            alt="Carpa Azul"
-            onClick={() => {
-              setImagenActual(carpaAzul);
-              setIndice(1);
-            }}
-          />
-
-          <img
-            src={carpaRoja}
-            alt="Carpa Roja"
-            onClick={() => setImagenActual(carpaRoja)}
-          />
+          {imagenes.map((imagen, index) => (
+            <img
+              key={index}
+              src={imagen}
+              alt={`${producto?.nombre || "Producto"} ${index + 1}`}
+              onClick={() => {
+                setImagenActual(imagen);
+                setIndice(index);
+              }}
+            />
+          ))}
 
         </div>
 
-        <button className="product-gallery-arrow product-gallery-right"
-          onClick={() => {
-            if (indice === imagenes.length - 1) {
-              setIndice(0);
-              setImagenActual(imagenes[0]);
-            } else {
-              setIndice(indice + 1);
-              setImagenActual(imagenes[indice + 1]);
-            }
-          }}
+        <button
+          className="product-gallery-arrow product-gallery-right"
+          onClick={siguienteImagen}
         >
           &#8250;
         </button>
@@ -85,5 +100,3 @@ function ProductGallery() {
     </section>
   );
 }
-
-export default ProductGallery;

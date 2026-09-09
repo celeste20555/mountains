@@ -4,9 +4,7 @@ import logo from "../../imagenes/logo.png";
 import Carpita from "../../imagenes/Carpita.svg";
 import tent from "../../imagenes/tent-icon.png";
 
-import { useState } from "react";
-
-import { categorias } from "../RelatedProducts/RelatedProducts";
+import { useEffect, useState } from "react";
 
 import {
   FiSearch,
@@ -25,10 +23,31 @@ function Navbar({
 }) {
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [mostrarSugerencias, setMostrarSugerencias] = useState(true);
+  const [productos, setProductos] = useState([]);
 
-  const productos = categorias.flatMap(
-    (categoria) => categoria.productos
-  );
+  useEffect(() => {
+    fetch("http://localhost:3001")
+      .then((respuesta) => respuesta.json())
+      .then((datos) => {
+        if (datos.ok) {
+          const productosGoogle = datos.datos
+            .slice(1)
+            .map((fila) => ({
+              nombre: fila[0],
+              precio: `$${Number(fila[1]).toLocaleString("es-AR")}`,
+              stock: Number(fila[2]),
+              categoria: fila[3],
+              imagen: fila[4],
+              descripcion: fila[5],
+            }));
+
+          setProductos(productosGoogle);
+        }
+      })
+      .catch((error) => {
+        console.error("Error al obtener productos:", error);
+      });
+  }, []);
 
   const sugerencias = productos
     .filter((producto) =>
@@ -73,13 +92,12 @@ function Navbar({
         </div>
 
         <div
-          className={`navbar-search ${
-            mostrarSugerencias &&
-            textoBusqueda.trim() !== "" &&
-            sugerencias.length > 0
+          className={`navbar-search ${mostrarSugerencias &&
+              textoBusqueda.trim() !== "" &&
+              sugerencias.length > 0
               ? "con-sugerencias"
               : ""
-          }`}
+            }`}
         >
           <FiSearch />
 

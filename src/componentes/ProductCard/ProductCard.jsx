@@ -4,6 +4,7 @@ function ProductCard({
   imagen,
   nombre,
   precio,
+  producto,
   setMostrarProducto,
   setMostrarBusqueda,
 }) {
@@ -13,7 +14,7 @@ function ProductCard({
     }
 
     if (setMostrarProducto) {
-      setMostrarProducto(true);
+      setMostrarProducto(producto);
     }
 
     window.scrollTo({

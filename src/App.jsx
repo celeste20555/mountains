@@ -3,40 +3,43 @@ import { useState } from "react";
 import "./App.css";
 
 import Navbar from "./componentes/Navbar/Navbar";
-
 import Hero from "./componentes/Hero/Hero";
-
 import Categories from "./componentes/Categories/Categories";
-
 import HomeProducts from "./componentes/HomeProducts/HomeProducts";
-
 import ListadeProducts from "./componentes/ListadeProducts/ListadeProducts";
-
 import Footer from "./componentes/Footer/Footer";
-
 import Busqueda from "./componentes/Busqueda/Busqueda";
-
 import Producto from "./componentes/Producto/Producto";
-
 import Carrito from "./componentes/Carrito/Carrito";
 
 function App() {
   const [mostrarBusqueda, setMostrarBusqueda] = useState(false);
   const [mostrarProductos, setMostrarProductos] = useState(false);
   const [mostrarProducto, setMostrarProducto] = useState(false);
+  const [productoSeleccionado, setProductoSeleccionado] =
+    useState(null);
   const [carritoAbierto, setCarritoAbierto] = useState(false);
   const [carrito, setCarrito] = useState([]);
   const [textoBusqueda, setTextoBusqueda] = useState("");
 
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(
-    "Todas las categorías"
-  );
+  const [categoriaSeleccionada, setCategoriaSeleccionada] =
+    useState("Todas las categorías");
 
   const irACategoria = (categoria) => {
     setCategoriaSeleccionada(categoria);
     setMostrarProductos(true);
     setMostrarProducto(false);
     setMostrarBusqueda(false);
+  };
+
+  const abrirProducto = (producto) => {
+    setProductoSeleccionado(producto);
+    setMostrarProducto(true);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -55,16 +58,17 @@ function App() {
           <Busqueda
             textoBusqueda={textoBusqueda}
             setMostrarBusqueda={setMostrarBusqueda}
-            setMostrarProducto={setMostrarProducto}
+            setMostrarProducto={abrirProducto}
           />
 
           <Footer />
         </>
-      ) : mostrarProducto ? (
+      ) : mostrarProducto && productoSeleccionado ? (
         <>
           <Producto
             carrito={carrito}
             setCarrito={setCarrito}
+            producto={productoSeleccionado}
           />
 
           <Footer />
@@ -72,9 +76,11 @@ function App() {
       ) : mostrarProductos ? (
         <>
           <ListadeProducts
-            setMostrarProducto={setMostrarProducto}
+            setMostrarProducto={abrirProducto}
             categoriaSeleccionada={categoriaSeleccionada}
-            setCategoriaSeleccionada={setCategoriaSeleccionada}
+            setCategoriaSeleccionada={
+              setCategoriaSeleccionada
+            }
           />
 
           <Footer />
@@ -88,7 +94,7 @@ function App() {
           />
 
           <HomeProducts
-            setMostrarProducto={setMostrarProducto}
+            setMostrarProducto={abrirProducto}
           />
 
           <Footer />

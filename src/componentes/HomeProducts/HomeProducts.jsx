@@ -1,44 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./HomeProducts.css";
 import ProductCard from "../ProductCard/ProductCard";
-import producto1 from "../../imagenes/Campera.png";
-import producto2 from "../../imagenes/Gorra.png";
-import producto3 from "../../imagenes/Bolsegos.png";
+
 function HomeProducts({ setMostrarProducto }) {
   const [inicio, setInicio] = useState(0);
+  const [productos, setProductos] = useState([]);
 
-  const productos = [
-    {
-      imagen: producto1,
-      nombre: "Campera térmica",
-      precio: "$35.000",
-    },
-    {
-      imagen: producto2,
-      nombre: "Gorro térmico",
-      precio: "$10.000",
-    },
-    {
-      imagen: producto3,
-      nombre: "Bolsegos",
-      precio: "$33.000",
-    },
-    {
-      imagen: producto3,
-      nombre: "Bolsegos",
-      precio: "$33.000",
-    },
-    {
-      imagen: producto2,
-      nombre: "Gorro térmico",
-      precio: "$10.000",
-    },
-    {
-      imagen: producto1,
-      nombre: "Campera térmica",
-      precio: "$35.000",
-    },
-  ];
+  useEffect(() => {
+    fetch("http://localhost:3001")
+      .then((respuesta) => respuesta.json())
+      .then((datos) => {
+        if (datos.ok) {
+          const productosGoogle = datos.datos.slice(1).map((fila) => ({
+            nombre: fila[0],
+            precio: Number(fila[1]),
+            stock: Number(fila[2]),
+            categoria: fila[3],
+            descripcion: fila[5],
+            imagen: fila[4],
+            imagen2: fila[6],
+            imagen3: fila[7]
+          }));
+
+          setProductos(productosGoogle);
+        }
+      })
+      .catch((error) => {
+        console.error("Error al obtener productos:", error);
+      });
+  }, []);
 
   return (
     <section className="home-products-section">
@@ -71,6 +61,7 @@ function HomeProducts({ setMostrarProducto }) {
               imagen={producto.imagen}
               nombre={producto.nombre}
               precio={producto.precio}
+              producto={producto}
               setMostrarProducto={setMostrarProducto}
             />
           )}

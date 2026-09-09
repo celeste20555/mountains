@@ -6,7 +6,13 @@ export default function Card_Carrito({ producto, carrito, setCarrito }) {
         setCarrito(
             carrito.map((item) => (
                 item.nombre === producto.nombre
-                    ? { ...item, cantidad: item.cantidad + 1 }
+                    ? {
+                        ...item,
+                        cantidad:
+                            item.cantidad < item.stock
+                                ? item.cantidad + 1
+                                : item.cantidad
+                    }
                     : item
             ))
         );
@@ -46,7 +52,7 @@ export default function Card_Carrito({ producto, carrito, setCarrito }) {
                         <button onClick={aumentar}>+</button>
                         <button>{producto.cantidad}</button>
                         <button onClick={disminuir}>-</button>
-                        <img src={Trash} alt="" onClick={eliminar}/>
+                        <img src={Trash} alt="" onClick={eliminar} />
                     </div>
                 </div>
             </div>
