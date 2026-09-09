@@ -17,13 +17,13 @@ export default function Carrito({ setCarritoAbierto, carrito, setCarrito }) {
         const productos = carrito
             .map((producto) => {
                 return `${producto.nombre}
-${producto.descripcion || ""}
-Cantidad: ${producto.cantidad}
-Precio: $${producto.precio * producto.cantidad}`;
+                ${producto.descripcion || ""}
+                Cantidad: ${producto.cantidad}
+                Precio: $${producto.precio * producto.cantidad}`;
             })
             .join("\n\n");
 
-        const total = carrito.reduce((total, producto) => {
+            const total = carrito.reduce((total, producto) => {
             return total + producto.precio * producto.cantidad;
         }, 0);
 

@@ -27,6 +27,25 @@
     width:35px;
     height:35px;
     border-radius:50%;
+    cursor:pointer;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.color.seleccionado::before,
+.color.seleccionado::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:3px;
+    background:rgb(4, 4, 4);
+    top:50%;
+    left:0;
+    transform:translateY(-50%) rotate(45deg);
+}
+.color.seleccionado::after{
+    transform:translateY(-50%) rotate(-45deg);
 }
 .beige{
     background:#B99120;
@@ -101,5 +120,4 @@
         display:block;
         margin:auto;
     }
-
 }
