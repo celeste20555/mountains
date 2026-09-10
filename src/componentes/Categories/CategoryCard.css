@@ -31,11 +31,6 @@
     transform: translateY(-3px);
 }
 
-
-/* =========================
-   IMAGEN
-========================= */
-
 .category-image {
     width: 100%;
     height: 105px;
@@ -45,10 +40,6 @@
     flex-shrink: 0;
 }
 
-
-/* =========================
-   ICONO
-========================= */
 
 .category-icon {
     position: absolute;
@@ -76,9 +67,7 @@
 }
 
 
-/* =========================
-   INFORMACION
-========================= */
+
 
 .category-info {
     flex: 1;
@@ -92,11 +81,6 @@
 
     text-align: center;
 }
-
-
-/* =========================
-   TITULO
-========================= */
 
 .category-info h3 {
     font-family: "Libre Baskerville", serif;
@@ -117,11 +101,6 @@
     text-align: center;
 }
 
-
-/* =========================
-   DESCRIPCION
-========================= */
-
 .category-info p {
     font-family: "Libre Baskerville", serif;
 
@@ -138,9 +117,6 @@
 }
 
 
-/* =========================
-   BOTON
-========================= */
 
 .category-info button {
     display: flex;
@@ -175,9 +151,7 @@
 }
 
 
-/* =========================
-   TABLET
-========================= */
+
 
 @media (max-width: 900px) {
 
@@ -229,10 +203,6 @@
     }
 }
 
-
-/* =========================
-   CELULAR
-========================= */
 
 @media (max-width: 768px) {
 
@@ -291,10 +261,6 @@
     }
 }
 
-
-/* =========================
-   CELULAR PEQUEÑO
-========================= */
 
 @media (max-width: 480px) {
 

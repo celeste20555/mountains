@@ -33,7 +33,7 @@ app.get("/", async (req, res) => {
             spreadsheetId: SPREADSHEET_ID,
             ranges: [
                 "A:Z",
-                "Categorias!A1:C11",
+                "Categorias!A:C",
             ],
         });
 
@@ -60,6 +60,6 @@ app.get("/", async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(
-        `Servidor funcionando en http://localhost:${PORT}`
+        `servidor funciona en http://localhost:${PORT}`
     );
 });
