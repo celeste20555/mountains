@@ -18,10 +18,15 @@ function RelatedProducts({
             .slice(1)
             .map((fila) => ({
               nombre: fila[0],
-              precio: `$${Number(fila[1]).toLocaleString("es-AR")}`,
+              precio: Number(fila[1]),
               stock: Number(fila[2]),
               categoria: fila[3],
-              imagen: fila[4],
+              imagen: fila[4]
+                .replace(
+                  "https://drive.google.com/file/d/",
+                  "https://drive.google.com/thumbnail?id="
+                )
+                .replace("/view?usp=sharing", ""),
               descripcion: fila[5],
               imagen2: fila[6],
               imagen3: fila[7],
@@ -36,7 +41,6 @@ function RelatedProducts({
       });
   }, []);
 
-  // Sacamos las categorías directamente de los productos
   const categorias = [
     ...new Set(
       productos
@@ -60,13 +64,8 @@ function RelatedProducts({
 
         const productosOrdenados = [...productosCategoria].sort(
           (a, b) => {
-            const precioA = Number(
-              a.precio.replace("$", "").replace(/\./g, "")
-            );
-
-            const precioB = Number(
-              b.precio.replace("$", "").replace(/\./g, "")
-            );
+            const precioA = a.precio;
+            const precioB = b.precio;
 
             if (orden === "Mayor precio") {
               return precioB - precioA;

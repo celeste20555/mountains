@@ -5,6 +5,19 @@ import ProductCard from "../ProductCard/ProductCard";
 function HomeProducts({ setMostrarProducto }) {
   const [inicio, setInicio] = useState(0);
   const [productos, setProductos] = useState([]);
+  const [esResponsive, setEsResponsive] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const cambiarPantalla = () => {
+      setEsResponsive(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", cambiarPantalla);
+
+    return () => {
+      window.removeEventListener("resize", cambiarPantalla);
+    };
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:3001")
@@ -17,9 +30,28 @@ function HomeProducts({ setMostrarProducto }) {
             stock: Number(fila[2]),
             categoria: fila[3],
             descripcion: fila[5],
-            imagen: fila[4],
-            imagen2: fila[6],
+            imagen: fila[4]
+              .replace(
+                "https://drive.google.com/file/d/",
+                "https://drive.google.com/thumbnail?id="
+              )
+              .replace("/view?usp=sharing", ""),
+            imagen2: fila[6]
+              ? fila[6]
+                .replace(
+                  "https://drive.google.com/file/d/",
+                  "https://drive.google.com/thumbnail?id="
+                )
+                .replace("/view?usp=sharing", "")
+              : "",
             imagen3: fila[7]
+              ? fila[6]
+                .replace(
+                  "https://drive.google.com/file/d/",
+                  "https://drive.google.com/thumbnail?id="
+                )
+                .replace("/view?usp=sharing", "")
+              : "",
           }));
 
           setProductos(productosGoogle);
@@ -44,9 +76,9 @@ function HomeProducts({ setMostrarProducto }) {
         <button className="flecha izquierda"
           onClick={() => {
             if (inicio === 0) {
-              setInicio(3);
+              setInicio(esResponsive ? productos.length - 1 : Math.max(0, productos.length - 3));
             } else {
-              setInicio(inicio - 3);
+              setInicio(inicio - (esResponsive ? 1 : 3));
             }
           }}
         >
@@ -55,7 +87,7 @@ function HomeProducts({ setMostrarProducto }) {
 
         <div className="productos-contenedor">
 
-          {productos.slice(inicio, inicio + 3).map((producto, index) =>
+          {productos.slice(inicio, inicio + (esResponsive ? 1 : 3)).map((producto, index) =>
             <ProductCard
               key={index}
               imagen={producto.imagen}
@@ -70,10 +102,10 @@ function HomeProducts({ setMostrarProducto }) {
 
         <button className="flecha derecha"
           onClick={() => {
-            if (inicio === 3) {
-              setInicio(0);
+            if (esResponsive) {
+              setInicio(inicio === productos.length - 1 ? 0 : inicio + 1);
             } else {
-              setInicio(inicio + 3);
+              setInicio(inicio + 3 >= productos.length ? 0 : inicio + 3);
             }
           }}
         >

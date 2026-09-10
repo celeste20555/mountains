@@ -25,11 +25,16 @@ function Categories({ irACategoria }) {
             .slice(1)
             .map((fila) => ({
               titulo: fila[0],
-              imagen: fila[1],
+              imagen: fila[1]
+                .replace(
+                  "https://drive.google.com/file/d/",
+                  "https://drive.google.com/thumbnail?id="
+                )
+                .replace("/view?usp=sharing", ""),
               descripcion: fila[2],
             }))
             .filter((categoria) => categoria.titulo);
-            
+
 
           setCategorias(categoriasGoogle);
         }
