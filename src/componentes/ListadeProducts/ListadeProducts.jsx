@@ -45,7 +45,7 @@ function ListadeProducts({
       }
 
       const elemento = document.getElementById(
-        `categoria - ${categoriaSeleccionada} `
+        `categoria-${categoriaSeleccionada}`
       );
 
       if (elemento) {

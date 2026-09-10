@@ -29,6 +29,7 @@ function Categories({ irACategoria }) {
               descripcion: fila[2],
             }))
             .filter((categoria) => categoria.titulo);
+            
 
           setCategorias(categoriasGoogle);
         }

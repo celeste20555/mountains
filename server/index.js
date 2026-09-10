@@ -32,7 +32,7 @@ app.get("/", async (req, res) => {
         const response = await sheets.spreadsheets.values.batchGet({
             spreadsheetId: SPREADSHEET_ID,
             ranges: [
-                "A1:Z10",
+                "A:Z",
                 "Categorias!A1:C11",
             ],
         });

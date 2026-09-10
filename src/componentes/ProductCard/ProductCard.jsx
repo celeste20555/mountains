@@ -32,10 +32,10 @@ function ProductCard({
 
       <div className="card-info">
         <h3>{nombre}</h3>
-        <p>{precio}</p>
+        <p>${precio}</p>
 
         <button onClick={abrirProducto}>
-          Ver producto →
+          Ver producto
         </button>
       </div>
     </div>

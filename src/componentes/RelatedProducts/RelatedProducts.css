@@ -25,6 +25,7 @@
     align-items: center;
     gap: 30px;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
 .producto-related-grid {
@@ -53,6 +54,10 @@
 
 .producto-arrow:hover {
     color: #8f9f5c;
+}
+
+.related-container {
+    margin-bottom: 20px;
 }
 
 @media (max-width: 900px) {
