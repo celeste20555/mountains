@@ -247,6 +247,9 @@
     padding: 40px 45px;
     box-sizing: border-box;
 }
+.related-products{
+    min-height: 400px;
+}
 
 @media (max-width: 1000px) {
     .related,

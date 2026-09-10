@@ -32,7 +32,7 @@ function ProductCard({
 
       <div className="card-info">
         <h3>{nombre}</h3>
-        <p>{precio}</p>
+        <p>${precio.toLocaleString("es-AR")}</p>
 
         <button onClick={abrirProducto}>
           Ver producto

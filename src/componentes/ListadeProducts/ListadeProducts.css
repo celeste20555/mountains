@@ -6,7 +6,7 @@ h2 {
 
 .subtitulos1 {
  position: relative;
- left: 35px;
+ padding-left: 35px;
  font-family: "Alkatra", cursive;
  font-size: 20px;
  color: rgba(108, 124, 53, 0.78);
