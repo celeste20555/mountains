@@ -36,7 +36,6 @@ function RelatedProducts({
       });
   }, []);
 
-  // Sacamos las categorías directamente de los productos
   const categorias = [
     ...new Set(
       productos
